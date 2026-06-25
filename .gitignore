@@ -1,7 +1,12 @@
 # Hugo output
 public/
 resources/
+resources/_gen/
 .hugo_build.lock
+
+# Environment
+.env
+.env.*
 
 # Editor
 .vscode/
