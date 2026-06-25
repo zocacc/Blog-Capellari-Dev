@@ -1,0 +1,17 @@
+# Hugo
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Ambiente
+.env
+.env.*
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
