@@ -30,6 +30,8 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    outputs:
+      pages_enabled: ${{ steps.pages-status.outputs.enabled }}
     env:
       HUGO_VERSION: 0.156.0
     steps:
@@ -44,7 +46,17 @@ jobs:
           go-version: '1.26'
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4
+        continue-on-error: true
+        uses: actions/configure-pages@v5
+      - name: Detect Pages availability
+        id: pages-status
+        run: |
+          if [[ "${{ steps.pages.outcome }}" == "success" ]]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "GitHub Pages is not enabled for this repository. Skipping artifact upload and deploy." >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Setup Hugo
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
@@ -54,17 +66,21 @@ jobs:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
+          PAGES_BASE_URL: ${{ steps.pages.outputs.base_url }}
         run: |
+          base_url="${PAGES_BASE_URL:-https://example.org/}"
           hugo \
             --gc --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "${base_url%/}/"
       - name: Upload artifact
+        if: steps.pages-status.outputs.enabled == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
   # Deployment job
   deploy:
+    if: needs.build.outputs.pages_enabled == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -73,4 +89,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
