@@ -1,0 +1,212 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$SCRIPT_DIR"
+CONTAINER_WORKDIR="/workspaces/Blog-Capellari-Dev"
+DEV_COMPOSE_FILE="$PROJECT_ROOT/.devcontainer/compose.yaml"
+PROD_COMPOSE_FILE="/opt/capellari-dev/compose.yaml"
+PROD_PUBLIC_DIR="/opt/capellari-dev/public"
+LOCAL_PUBLIC_DIR="$PROJECT_ROOT/public"
+DEV_SERVICE="workspace"
+DEV_PORT="1313"
+DEV_BASE_URL="http://localhost:${DEV_PORT}"
+
+usage() {
+  cat <<'USAGE'
+Usage:
+  ./blog bootstrap
+  ./blog new "Titulo do post"
+  ./blog dev
+  ./blog build
+  ./blog publish
+USAGE
+}
+
+log() {
+  printf '[blog] %s\n' "$1"
+}
+
+fail() {
+  printf '[blog] erro: %s\n' "$1" >&2
+  exit 1
+}
+
+require_file() {
+  local file="$1"
+  [[ -f "$file" ]] || fail "arquivo nao encontrado: $file"
+}
+
+require_command() {
+  command -v "$1" >/dev/null 2>&1 || fail "comando obrigatorio ausente: $1"
+}
+
+run_in_project() {
+  (
+    cd "$PROJECT_ROOT"
+    "$@"
+  )
+}
+
+docker_compose_dev() {
+  run_in_project docker compose -f "$DEV_COMPOSE_FILE" "$@"
+}
+
+docker_compose_prod() {
+  docker compose -f "$PROD_COMPOSE_FILE" "$@"
+}
+
+dev_exec() {
+  docker_compose_dev exec -T -w "$CONTAINER_WORKDIR" "$DEV_SERVICE" "$@"
+}
+
+dev_exec_interactive() {
+  docker_compose_dev exec -w "$CONTAINER_WORKDIR" "$DEV_SERVICE" "$@"
+}
+
+ensure_dev_container() {
+  require_command docker
+  require_file "$DEV_COMPOSE_FILE"
+  log "garantindo dev container"
+  docker_compose_dev up -d "$DEV_SERVICE" >/dev/null
+}
+
+ensure_dir_owned_by_user() {
+  local dir="$1"
+
+  if [[ ! -e "$dir" ]]; then
+    sudo mkdir -p "$dir"
+  fi
+
+  local owner
+  owner="$(stat -c '%U' "$dir")"
+  if [[ "$owner" != "$USER" ]]; then
+    log "ajustando permissao de $dir"
+    sudo chown -R "$USER":"$USER" "$dir"
+  fi
+}
+
+slugify() {
+  local input="$1"
+  local output
+
+  output="$(printf '%s' "$input" \
+    | iconv -f UTF-8 -t ASCII//TRANSLIT \
+    | tr '[:upper:]' '[:lower:]' \
+    | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//; s/-+/-/g')"
+
+  [[ -n "$output" ]] || fail "nao foi possivel gerar slug a partir do titulo"
+  printf '%s\n' "$output"
+}
+
+bootstrap() {
+  require_command docker
+  require_command sudo
+  require_command rsync
+  require_command stat
+  require_command iconv
+  require_file "$DEV_COMPOSE_FILE"
+  require_file "$PROD_COMPOSE_FILE"
+
+  ensure_dev_container
+
+  log "preparando diretorios de build e publicacao"
+  mkdir -p "$LOCAL_PUBLIC_DIR"
+  ensure_dir_owned_by_user "$LOCAL_PUBLIC_DIR"
+  ensure_dir_owned_by_user "$PROD_PUBLIC_DIR"
+
+  log "validando compose de producao"
+  docker_compose_prod config >/dev/null
+  docker_compose_prod up -d >/dev/null
+
+  log "bootstrap concluido"
+}
+
+new_post() {
+  local title="${1:-}"
+  [[ -n "$title" ]] || fail 'informe o titulo: ./blog new "Titulo do post"'
+
+  require_command date
+  require_command iconv
+  ensure_dev_container
+
+  local year slug target_rel target_abs
+  year="$(date +%Y)"
+  slug="$(slugify "$title")"
+  target_rel="content/blog/${year}/${slug}/index.md"
+  target_abs="$PROJECT_ROOT/$target_rel"
+
+  [[ ! -e "$target_abs" ]] || fail "post ja existe: $target_rel"
+
+  log "criando post em $target_rel"
+  dev_exec hugo new "blog/${year}/${slug}/index.md" >/dev/null
+
+  log "post criado"
+  printf '%s\n' "$target_rel"
+}
+
+dev_server() {
+  ensure_dev_container
+  log "iniciando preview em $DEV_BASE_URL"
+  dev_exec_interactive hugo server --bind 0.0.0.0 --baseURL "$DEV_BASE_URL" --port "$DEV_PORT"
+}
+
+build_site() {
+  ensure_dev_container
+  ensure_dir_owned_by_user "$LOCAL_PUBLIC_DIR"
+
+  log "gerando build de producao em public/"
+  dev_exec hugo --gc --minify
+}
+
+publish_site() {
+  require_command rsync
+  require_file "$PROD_COMPOSE_FILE"
+  ensure_dir_owned_by_user "$PROD_PUBLIC_DIR"
+
+  build_site
+
+  log "sincronizando public/ para $PROD_PUBLIC_DIR/"
+  rsync -av --delete "$LOCAL_PUBLIC_DIR/" "$PROD_PUBLIC_DIR/"
+
+  log "garantindo servico Caddy em execucao"
+  docker_compose_prod up -d >/dev/null
+  docker_compose_prod ps
+}
+
+main() {
+  [[ -f "$PROJECT_ROOT/hugo.yaml" ]] || fail "execute o script na raiz do projeto"
+
+  case "${1:-}" in
+    bootstrap)
+      shift
+      bootstrap "$@"
+      ;;
+    new)
+      shift
+      new_post "$@"
+      ;;
+    dev)
+      shift
+      dev_server "$@"
+      ;;
+    build)
+      shift
+      build_site "$@"
+      ;;
+    publish)
+      shift
+      publish_site "$@"
+      ;;
+    -h|--help|help)
+      usage
+      ;;
+    *)
+      usage
+      exit 1
+      ;;
+  esac
+}
+
+main "$@"

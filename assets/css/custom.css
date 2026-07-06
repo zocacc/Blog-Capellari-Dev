@@ -4,6 +4,15 @@
   --capellari-surface: rgba(255, 255, 255, 0.78);
   --capellari-surface-strong: rgba(255, 255, 255, 0.92);
   --capellari-text-soft: #475569;
+  --capellari-text-strong: #0f172a;
+}
+
+html.dark {
+  --capellari-border: rgba(148, 163, 184, 0.18);
+  --capellari-surface: rgba(15, 23, 42, 0.72);
+  --capellari-surface-strong: rgba(15, 23, 42, 0.9);
+  --capellari-text-soft: #cbd5e1;
+  --capellari-text-strong: #f8fafc;
 }
 
 html {
@@ -11,16 +20,13 @@ html {
 }
 
 body {
+  color: var(--capellari-text-strong);
   background:
     radial-gradient(circle at top, rgba(148, 163, 184, 0.16), transparent 28%),
     linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
 }
 
-body.dark {
-  --capellari-border: rgba(148, 163, 184, 0.18);
-  --capellari-surface: rgba(15, 23, 42, 0.68);
-  --capellari-surface-strong: rgba(15, 23, 42, 0.88);
-  --capellari-text-soft: #cbd5e1;
+html.dark body {
   background:
     radial-gradient(circle at top, rgba(56, 189, 248, 0.09), transparent 30%),
     linear-gradient(180deg, #020617 0%, #0f172a 100%);
@@ -66,12 +72,21 @@ body.dark {
 
 .hero-panel h1,
 .section-heading h2,
-.capellari-error-card h1 {
-  margin: 0;
+.capellari-error-card h1,
+.interest-card h3,
+.article-card h3,
+.project-card h2,
+.project-card h3,
+.project-meta-grid dt,
+.project-meta-grid dd,
+.project-lessons h2 {
+  margin-top: 0;
+  color: var(--capellari-text-strong);
   text-wrap: balance;
 }
 
 .hero-panel h1 {
+  margin: 0;
   font-size: clamp(2.8rem, 5vw, 4.6rem);
   line-height: 0.95;
 }
@@ -87,7 +102,11 @@ body.dark {
 .article-card p,
 .project-card p,
 .empty-state p,
-.project-description {
+.project-description,
+.project-lessons li,
+.site-footer-inner,
+.site-footer-inner a,
+.site-footer-inner span {
   color: var(--capellari-text-soft);
 }
 
@@ -140,6 +159,7 @@ body.dark {
 .capellari-error-card a {
   border: 1px solid var(--capellari-border);
   background: var(--capellari-surface-strong);
+  color: var(--capellari-text-strong);
 }
 
 .home-section {
@@ -187,7 +207,6 @@ body.dark {
 .article-card h3,
 .project-card h2,
 .project-card h3 {
-  margin-top: 0;
   margin-bottom: 0.65rem;
 }
 
@@ -221,6 +240,7 @@ body.dark {
   border-radius: 999px;
   border: 1px solid var(--capellari-border);
   background: var(--capellari-surface-strong);
+  color: var(--capellari-text-strong);
   font-size: 0.9rem;
 }
 
@@ -252,6 +272,11 @@ body.dark {
   margin: 0;
 }
 
+.project-meta-grid dd a,
+.project-links a {
+  color: var(--capellari-text-strong);
+}
+
 .project-lessons {
   margin-top: 2rem;
 }
@@ -268,11 +293,7 @@ body.dark {
 .site-footer-inner p {
   margin: 0;
   font-weight: 600;
-}
-
-.site-footer-inner a,
-.site-footer-inner span {
-  color: inherit;
+  color: var(--capellari-text-strong);
 }
 
 .capellari-error-page {
@@ -293,7 +314,6 @@ body.dark {
   max-width: 38rem;
   padding: 2rem;
   border-radius: 1.5rem;
-  text-align: center;
 }
 
 @media (prefers-color-scheme: dark) {
