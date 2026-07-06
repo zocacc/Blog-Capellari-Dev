@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang | default "pt-BR" }}" dir="{{ partial "utils/hugo-compat/language-direction.html" .Site.Language | default "ltr" }}">
+  <body class="capellari-error-page">
+    <main id="content" class="capellari-error-card">
+      <p class="error-kicker">Erro 404</p>
+      <h1>Página não encontrada</h1>
+      <p>O caminho que você tentou acessar não existe ou foi movido. Use a navegação principal ou volte para a página inicial.</p>
+      <p><a href="{{ "/" | relURL }}">Ir para a página inicial</a></p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+services:
+  workspace:
+    image: capellari-dev-workspace:local
+    container_name: capellari-dev-workspace
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspaces/Blog-Capellari-Dev:cached
+    ports:
+      - "1313:1313"
+    command: sleep infinity

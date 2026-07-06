@@ -1,0 +1,11 @@
+Fluxo oficial do projeto:
+
+./blog bootstrap
+./blog new "Meu novo post"
+./blog dev
+./blog build
+./blog publish
+
+Verificacao de producao:
+
+curl -I http://127.0.0.1

@@ -1,12 +1,9 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/go:1",
-  "features": {
-    "ghcr.io/devcontainers/features/hugo:1": {
-      "extended": true,
-      "version": "0.156.0"
-    },
-    "ghcr.io/devcontainers/features/node:1": {}
-  },
+  "name": "capellari-dev",
+  "dockerComposeFile": "compose.yaml",
+  "service": "workspace",
+  "workspaceFolder": "/workspaces/Blog-Capellari-Dev",
+  "remoteUser": "vscode",
   "customizations": {
     "vscode": {
       "extensions": [

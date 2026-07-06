@@ -1,0 +1,99 @@
+{{ define "main" }}
+  {{- $recentPosts := first 3 (where site.RegularPages.ByDate.Reverse "Type" "blog") -}}
+  {{- $featuredProjects := first 2 (where site.RegularPages.ByDate.Reverse "Type" "projects") -}}
+  <div class="hx:mx-auto hx:flex hextra-max-page-width">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" false) }}
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-12">
+      <main id="content" class="home-shell hx:w-full hx:min-w-0 hx:px-6 hx:pt-6 hx:md:px-12">
+        <section class="hero-panel" aria-labelledby="hero-title">
+          <p class="hero-kicker">Capellari Dev</p>
+          <h1 id="hero-title">Enzo Capellari</h1>
+          <p class="hero-lead">Estudante de Engenharia de Computação, desenvolvedor e profissional de telecomunicações.</p>
+          <p class="hero-copy">Escrevo sobre software, redes, infraestrutura, eletrônica, sistemas embarcados e os projetos que desenvolvo durante minha formação e atuação profissional.</p>
+          <div class="hero-actions">
+            <a class="primary-link" href="{{ "/blog/" | relURL }}">Ler o blog</a>
+            <a class="secondary-link" href="{{ "/projetos/" | relURL }}">Ver projetos</a>
+            <a class="secondary-link" href="https://github.com/zocacc" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </section>
+
+        <section class="home-section" aria-labelledby="areas-title">
+          <div class="section-heading">
+            <p class="section-label">Áreas de interesse</p>
+            <h2 id="areas-title">Temas que orientam meus estudos e projetos</h2>
+          </div>
+          <div class="interest-grid">
+            <article class="interest-card"><h3>Desenvolvimento de software</h3><p>Python, automação, APIs, documentação e ferramentas para reduzir trabalho manual.</p></article>
+            <article class="interest-card"><h3>Redes e telecomunicações</h3><p>Troubleshooting, análise de logs, GPON, OLTs, ONTs e investigação orientada por evidências.</p></article>
+            <article class="interest-card"><h3>Infraestrutura e self-hosting</h3><p>Linux, Docker, PostgreSQL, observabilidade básica e ambientes que eu consiga entender e manter.</p></article>
+            <article class="interest-card"><h3>Sistemas embarcados e eletrônica</h3><p>Microcontroladores, Raspberry Pi Pico, ADC, PWM, UART e controle em projetos acadêmicos e experimentais.</p></article>
+            <article class="interest-card"><h3>IA aplicada ao desenvolvimento</h3><p>Agentes, engenharia de contexto, automação assistida e uso prático de IA em fluxos técnicos.</p></article>
+            <article class="interest-card"><h3>Open source e ferramentas</h3><p>Projetos públicos, colaboração, padronização de processos e utilitários para desenvolvedores.</p></article>
+          </div>
+        </section>
+
+        <section class="home-section" aria-labelledby="recent-title">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="section-label">Artigos recentes</p>
+              <h2 id="recent-title">Texto longo para problemas que merecem contexto</h2>
+            </div>
+            <a class="section-link" href="{{ "/blog/" | relURL }}">Ver arquivo completo</a>
+          </div>
+          {{ if gt (len $recentPosts) 0 }}
+            <div class="article-grid">
+              {{ range $recentPosts }}
+                <article class="article-card">
+                  <p class="article-meta">{{ partial "utils/format-date" .Date }}</p>
+                  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                  <p>{{ partial "utils/page-description" . }}</p>
+                  {{ with .Params.tags }}
+                    <ul class="meta-list" aria-label="Tags do artigo">
+                      {{ range first 3 . }}<li>{{ . }}</li>{{ end }}
+                    </ul>
+                  {{ end }}
+                </article>
+              {{ end }}
+            </div>
+          {{ else }}
+            <div class="empty-state">
+              <p>Os primeiros artigos estão em preparação. A seção já está estruturada para receber publicações técnicas com contexto e histórico.</p>
+            </div>
+          {{ end }}
+        </section>
+
+        <section class="home-section" aria-labelledby="projects-title">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="section-label">Projetos em destaque</p>
+              <h2 id="projects-title">Estrutura pronta para documentar trabalho real</h2>
+            </div>
+            <a class="section-link" href="{{ "/projetos/" | relURL }}">Abrir seção de projetos</a>
+          </div>
+          {{ if gt (len $featuredProjects) 0 }}
+            <div class="project-grid">
+              {{ range $featuredProjects }}
+                <article class="project-card">
+                  <div class="project-header">
+                    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    {{ with .Params.status }}<span class="status-badge">{{ . }}</span>{{ end }}
+                  </div>
+                  <p>{{ partial "utils/page-description" . }}</p>
+                  {{ with .Params.technologies }}
+                    <ul class="meta-list" aria-label="Tecnologias do projeto">
+                      {{ range . }}<li>{{ . }}</li>{{ end }}
+                    </ul>
+                  {{ end }}
+                </article>
+              {{ end }}
+            </div>
+          {{ else }}
+            <div class="empty-state">
+              <p>Os projetos ainda estão sendo documentados. A seção já contempla status, tecnologias, links para GitHub, artigo relacionado e principais aprendizados.</p>
+            </div>
+          {{ end }}
+        </section>
+      </main>
+    </article>
+  </div>
+{{ end }}
