@@ -17,21 +17,7 @@
           </div>
         </section>
 
-        <section class="home-section" aria-labelledby="areas-title">
-          <div class="section-heading">
-            <p class="section-label">Áreas de interesse</p>
-            <h2 id="areas-title">Temas que orientam meus estudos e projetos</h2>
-          </div>
-          <div class="interest-grid">
-            <article class="interest-card"><h3>Desenvolvimento de software</h3><p>Python, automação, APIs, documentação e ferramentas para reduzir trabalho manual.</p></article>
-            <article class="interest-card"><h3>Redes e telecomunicações</h3><p>Troubleshooting, análise de logs, GPON, OLTs, ONTs e investigação orientada por evidências.</p></article>
-            <article class="interest-card"><h3>Infraestrutura e self-hosting</h3><p>Linux, Docker, PostgreSQL, observabilidade básica e ambientes que eu consiga entender e manter.</p></article>
-            <article class="interest-card"><h3>Sistemas embarcados e eletrônica</h3><p>Microcontroladores, Raspberry Pi Pico, ADC, PWM, UART e controle em projetos acadêmicos e experimentais.</p></article>
-            <article class="interest-card"><h3>IA aplicada ao desenvolvimento</h3><p>Agentes, engenharia de contexto, automação assistida e uso prático de IA em fluxos técnicos.</p></article>
-            <article class="interest-card"><h3>Open source e ferramentas</h3><p>Projetos públicos, colaboração, padronização de processos e utilitários para desenvolvedores.</p></article>
-          </div>
-        </section>
-
+        <!-- Seção do Blog (Destaque Principal) -->
         <section class="home-section" aria-labelledby="recent-title">
           <div class="section-heading split-heading">
             <div>
@@ -41,18 +27,77 @@
             <a class="section-link" href="{{ "/blog/" | relURL }}">Ver arquivo completo</a>
           </div>
           {{ if gt (len $recentPosts) 0 }}
-            <div class="article-grid">
-              {{ range $recentPosts }}
-                <article class="article-card">
-                  <p class="article-meta">{{ partial "utils/format-date" .Date }}</p>
-                  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                  <p>{{ partial "utils/page-description" . }}</p>
-                  {{ with .Params.tags }}
-                    <ul class="meta-list" aria-label="Tags do artigo">
-                      {{ range first 3 . }}<li>{{ . }}</li>{{ end }}
-                    </ul>
+            <div class="blog-featured-layout">
+              {{ range $index, $post := $recentPosts }}
+                {{ if eq $index 0 }}
+                  <!-- Post em Destaque -->
+                  <article class="featured-article-card">
+                    <div class="featured-content">
+                      <div class="featured-meta-row">
+                        <span class="featured-badge">Último Artigo</span>
+                        <span class="featured-date">{{ partial "utils/format-date" .Date }}</span>
+                        <span class="featured-reading-time">· {{ printf "%d min de leitura" .ReadingTime }}</span>
+                      </div>
+                      <h3 class="featured-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                      <p class="featured-description">{{ partial "utils/page-description" . }}</p>
+                      
+                      {{ with .Params.categories }}
+                        <div class="featured-categories hx:mt-2 hx:mb-4 hx:flex hx:gap-2">
+                          {{ range . }}<span class="category-badge">{{ . }}</span>{{ end }}
+                        </div>
+                      {{ end }}
+                      
+                      {{ with .Params.tags }}
+                        <ul class="meta-list" aria-label="Tags do artigo">
+                          {{ range first 3 . }}<li>{{ . }}</li>{{ end }}
+                        </ul>
+                      {{ end }}
+                      
+                      <div class="featured-action-row hx:mt-6">
+                        <a href="{{ .RelPermalink }}" class="featured-read-link">Ler artigo completo <span class="arrow">→</span></a>
+                      </div>
+                    </div>
+                    <div class="featured-visual">
+                      <div class="visual-gradient-glow"></div>
+                      {{ if .Params.image }}
+                        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="featured-image" />
+                      {{ else }}
+                        <div class="visual-icon-wrap">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="visual-icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                          </svg>
+                        </div>
+                      {{ end }}
+                    </div>
+                  </article>
+                {{ end }}
+              {{ end }}
+
+              {{ if gt (len $recentPosts) 1 }}
+                <div class="article-grid hx:mt-6">
+                  {{ range $index, $post := $recentPosts }}
+                    {{ if gt $index 0 }}
+                      <article class="article-card">
+                        {{ if .Params.image }}
+                          <div class="article-card-image hx:mb-3 hx:overflow-hidden hx:rounded-lg hx:h-36">
+                            <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="hx:w-full hx:h-full hx:object-cover hx:transition-transform hx:duration-300 hover:hx:scale-105" />
+                          </div>
+                        {{ end }}
+                        <div class="article-card-header hx:flex hx:items-center hx:justify-between hx:mb-3">
+                          <span class="article-meta hx:mb-0">{{ partial "utils/format-date" .Date }}</span>
+                          <span class="article-meta hx:mb-0 hx:opacity-80">{{ printf "%d min" .ReadingTime }}</span>
+                        </div>
+                        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                        <p>{{ partial "utils/page-description" . }}</p>
+                        {{ with .Params.tags }}
+                          <ul class="meta-list" aria-label="Tags do artigo">
+                            {{ range first 3 . }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                        {{ end }}
+                      </article>
+                    {{ end }}
                   {{ end }}
-                </article>
+                </div>
               {{ end }}
             </div>
           {{ else }}
@@ -62,6 +107,7 @@
           {{ end }}
         </section>
 
+        <!-- Seção de Projetos -->
         <section class="home-section" aria-labelledby="projects-title">
           <div class="section-heading split-heading">
             <div>
@@ -92,6 +138,22 @@
               <p>Os projetos ainda estão sendo documentados. A seção já contempla status, tecnologias, links para GitHub, artigo relacionado e principais aprendizados.</p>
             </div>
           {{ end }}
+        </section>
+
+        <!-- Seção de Áreas de Interesse -->
+        <section class="home-section" aria-labelledby="areas-title">
+          <div class="section-heading">
+            <p class="section-label">Áreas de interesse</p>
+            <h2 id="areas-title">Temas que orientam meus estudos e projetos</h2>
+          </div>
+          <div class="interest-grid">
+            <article class="interest-card"><h3>Desenvolvimento de software</h3><p>Python, automação, APIs, documentação e ferramentas para reduzir trabalho manual.</p></article>
+            <article class="interest-card"><h3>Redes e telecomunicações</h3><p>Troubleshooting, análise de logs, GPON, OLTs, ONTs e investigação orientada por evidências.</p></article>
+            <article class="interest-card"><h3>Infraestrutura e self-hosting</h3><p>Linux, Docker, PostgreSQL, observabilidade básica e ambientes que eu consiga entender e manter.</p></article>
+            <article class="interest-card"><h3>Sistemas embarcados e eletrônica</h3><p>Microcontroladores, Raspberry Pi Pico, ADC, PWM, UART e controle em projetos acadêmicos e experimentais.</p></article>
+            <article class="interest-card"><h3>IA aplicada ao desenvolvimento</h3><p>Agentes, engenharia de contexto, automação assistida e uso prático de IA em fluxos técnicos.</p></article>
+            <article class="interest-card"><h3>Open source e ferramentas</h3><p>Projetos públicos, colaboração, padronização de processos e utilitários para desenvolvedores.</p></article>
+          </div>
         </section>
       </main>
     </article>

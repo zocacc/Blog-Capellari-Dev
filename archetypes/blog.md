@@ -5,6 +5,7 @@ lastmod: {{ .Date }}
 slug: '{{ .Name }}'
 draft: true
 description: ""
+image: ""
 categories:
   - Blog
 tags:

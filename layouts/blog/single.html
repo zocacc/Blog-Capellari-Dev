@@ -1,0 +1,103 @@
+{{ define "main" }}
+  <div class="hx:mx-auto hx:flex hextra-max-page-width">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
+    {{ partial "toc.html" . }}
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main id="content" class="hx:w-full hx:min-w-0 hextra-max-content-width hx:px-6 hx:pt-4 hx:md:px-12">
+        {{ partial "breadcrumb.html" (dict "page" . "enable" true) }}
+        
+        <header class="blog-post-header hx:mt-6 hx:mb-8">
+          {{ if .Params.categories }}
+            <div class="blog-post-categories hx:mb-3 hx:flex hx:gap-2">
+              {{ range .Params.categories }}
+                <span class="category-badge">{{ . }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+          
+          <h1 class="blog-post-title hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100 hx:mb-4">{{ .Title }}</h1>
+          
+          {{ if .Params.description }}
+            <p class="blog-post-subtitle hx:text-lg hx:text-slate-600 hx:dark:text-slate-400 hx:mb-6 hx:italic">{{ .Params.description }}</p>
+          {{ end }}
+          
+          <div class="blog-post-meta hx:flex hx:items-center hx:flex-wrap hx:gap-3 hx:text-gray-500 hx:dark:text-gray-400 hx:text-sm">
+            <span class="hx:flex hx:items-center hx:gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx:w-4 hx:h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+              </svg>
+              {{ partial "utils/format-date" .Date }}
+            </span>
+            <span class="hx:mx-1">·</span>
+            <span class="hx:flex hx:items-center hx:gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx:w-4 hx:h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {{ printf "%d min de leitura" .ReadingTime }}
+            </span>
+            {{ if .Params.authors }}
+              <span class="hx:mx-1">·</span>
+              <span class="hx:flex hx:items-center hx:gap-1">
+                {{ range $i, $author := .Params.authors }}
+                  {{ if $i }}, {{ end }}
+                  {{ if reflect.IsMap $author }}
+                    <a {{ with $author.link }}href="{{ . }}" target="_blank"{{ end }} class="hx:hover:underline hx:text-current">
+                      {{ $author.name }}
+                    </a>
+                  {{ else }}
+                    {{ $author }}
+                  {{ end }}
+                {{ end }}
+              </span>
+            {{ end }}
+          </div>
+        </header>
+
+        {{ with .Params.image }}
+          <div class="blog-post-banner hx:my-6 hx:overflow-hidden hx:rounded-2xl hx:border hx:border-slate-200 hx:dark:border-slate-800">
+            <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="hx:w-full hx:max-h-[440px] hx:object-cover" />
+          </div>
+        {{ end }}
+
+        <div class="content blog-content hx:mt-8">
+          {{ .Content }}
+        </div>
+
+        {{ if .Params.tags }}
+          <div class="blog-post-tags hx:mt-8 hx:pt-4 hx:border-t hx:border-slate-200 hx:dark:border-slate-800">
+            <span class="hx:text-sm hx:text-slate-500 hx:mr-2">Tags:</span>
+            {{ range .Params.tags }}
+              <span class="tag-badge">{{ . }}</span>
+            {{ end }}
+          </div>
+        {{ end }}
+
+        <!-- Author Card -->
+        <section class="about-author-card hx:mt-12 hx:p-6 hx:rounded-2xl hx:border hx:border-slate-200 hx:dark:border-slate-800 hx:bg-slate-50 hx:dark:bg-slate-900/50">
+          <div class="hx:flex hx:flex-col hx:sm:flex-row hx:gap-4 hx:items-center hx:sm:items-start">
+            <img src="https://github.com/zocacc.png" alt="Enzo Capellari" class="hx:w-20 hx:h-20 hx:rounded-full hx:border-2 hx:border-primary-500 hx:shadow-sm" />
+            <div class="hx:flex-1 hx:text-center hx:sm:text-left">
+              <span class="author-label hx:text-xs hx:font-bold hx:tracking-wider hx:uppercase hx:text-primary-600 hx:dark:text-primary-400">Sobre o Autor</span>
+              <h3 class="hx:text-lg hx:font-bold hx:text-slate-900 hx:dark:text-slate-100 hx:mt-1">Enzo Capellari</h3>
+              <p class="hx:text-sm hx:text-slate-600 hx:dark:text-slate-400 hx:mt-2">
+                Estudante de Engenharia de Computação na PUCPR, focado em desenvolvimento de software, telecomunicações e IoT. Atua no desenvolvimento de automações e ferramentas para resolução de problemas reais de rede.
+              </p>
+              <div class="author-social-links hx:flex hx:justify-center hx:sm:justify-start hx:gap-3 hx:mt-3">
+                <a href="https://github.com/zocacc" target="_blank" rel="noopener noreferrer" class="hx:text-xs hx:text-slate-500 hx:hover:text-primary-600 hx:dark:hover:text-primary-400">GitHub</a>
+                <span class="hx:text-slate-300 hx:dark:text-slate-700">•</span>
+                <a href="https://x.com/zocacc" target="_blank" rel="noopener noreferrer" class="hx:text-xs hx:text-slate-500 hx:hover:text-primary-600 hx:dark:hover:text-primary-400">X/Twitter</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {{- partial "components/last-updated.html" . -}}
+        {{- if (site.Params.blog.article.displayPagination | default true) -}}
+          {{- .Store.Set "reversePagination" (.Params.reversePagination | default true) -}}
+          {{- partial "components/pager.html" . -}}
+        {{ end }}
+        {{- partial "components/comments.html" . -}}
+      </main>
+    </article>
+  </div>
+{{ end }}
