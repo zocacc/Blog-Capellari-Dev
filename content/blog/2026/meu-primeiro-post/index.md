@@ -5,6 +5,7 @@ lastmod: 2026-07-06T23:15:03Z
 slug: 'meu-primeiro-post'
 draft: false
 description: "Ideia central do Blog e motivações"
+image: "/images/capivara-eng.png"
 categories:
   - Blog
 tags:
