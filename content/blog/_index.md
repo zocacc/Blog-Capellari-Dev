@@ -1,6 +1,6 @@
 ---
 title: Blog
-description: Artigos, estudos, experimentos e documentação técnica.
+description: Articles, studies, experiments, and technical documentation.
 cascade:
   type: blog
   toc: true
@@ -8,7 +8,7 @@ cascade:
     authors:
       - name: Enzo Capellari
 categories:
-  - Carreira e Aprendizado
+  - Career and Learning
 ---
 
-Artigos sobre software, redes, infraestrutura, eletrônica, sistemas embarcados e os projetos que acompanham minha evolução técnica.
+Articles about software, networks, infrastructure, electronics, embedded systems, and the projects that accompany my technical evolution.

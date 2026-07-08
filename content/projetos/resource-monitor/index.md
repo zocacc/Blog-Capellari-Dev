@@ -3,8 +3,8 @@ title: resource-monitor
 date: 2025-11-18
 lastmod: 2025-11-18
 type: projects
-description: Repositório público em C voltado a monitoramento de recursos e observação de comportamento do sistema.
-status: Público
+description: Public C repository focused on resource monitoring and observing system behavior.
+status: Public
 featured: false
 weight: 5
 repo: zocacc/resource-monitor
@@ -12,11 +12,11 @@ github: https://github.com/zocacc/resource-monitor
 language: C
 technologies:
   - C
-  - Monitoramento
-  - Sistemas
+  - Monitoring
+  - Systems
 lessons:
-  - Monitorar recursos ajuda a transformar comportamento do sistema em dados observáveis.
-  - Projetos de infraestrutura ganham valor quando mostram o que medem e por que medem.
+  - Monitoring resources helps transform system behavior into observable data.
+  - Infrastructure projects gain value when they show what they measure and why they measure it.
 ---
 
-Projeto público em C relacionado a monitoramento de recursos. A página conecta o repositório ao portfólio e reserva espaço para documentação técnica mais detalhada.
+Public C project related to resource monitoring. The page connects the repository to the portfolio and reserves space for more detailed technical documentation.

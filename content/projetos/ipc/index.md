@@ -3,8 +3,8 @@ title: IPC
 date: 2025-08-22
 lastmod: 2025-09-08
 type: projects
-description: Repositório público em C relacionado a estudos de programação de baixo nível e comunicação entre processos.
-status: Público
+description: Public C repository related to low-level programming studies and inter-process communication.
+status: Public
 featured: true
 weight: 3
 repo: zocacc/IPC
@@ -12,11 +12,11 @@ github: https://github.com/zocacc/IPC
 language: C
 technologies:
   - C
-  - Sistemas operacionais
+  - Operating Systems
   - GitHub
 lessons:
-  - Trabalhar próximo ao sistema exige atenção a estado, memória e comportamento de execução.
-  - Repositórios pequenos também merecem descrição para preservar o contexto do estudo.
+  - Working close to the system requires attention to state, memory, and execution behavior.
+  - Small repositories also deserve a description to preserve the context of the study.
 ---
 
-Projeto público em C. A página serve como registro do estudo e como ponto de entrada para o repositório original no GitHub.
+Public C project. The page serves as a record of the study and as an entry point to the original repository on GitHub.

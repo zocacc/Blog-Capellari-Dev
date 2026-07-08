@@ -1,11 +1,11 @@
 ---
-title: Exemplo de estrutura para projetos
+title: Project Structure Example
 date: 2026-06-25
 lastmod: 2026-06-25
 draft: true
 type: projects
-description: Conteúdo provisório usado para validar a estrutura da seção de projetos.
-status: Rascunho
+description: Temporary content used to validate the projects section structure.
+status: Draft
 technologies:
   - Hugo
   - Markdown
@@ -13,8 +13,8 @@ technologies:
 github: https://github.com/zocacc
 related_article: /blog/2026/criando-meu-blog/
 lessons:
-  - Definir uma estrutura consistente antes de publicar projetos reais reduz retrabalho.
-  - Separar descrição, status e aprendizados facilita manter a seção atualizada.
+  - Defining a consistent structure before publishing real projects reduces rework.
+  - Separating description, status, and lessons makes it easy to keep the section updated.
 ---
 
-Este é um conteúdo provisório para validar a estrutura da seção de projetos. Ele existe para testar navegação, taxonomias e apresentação antes que projetos reais sejam publicados por aqui.
+This is temporary content to validate the structure of the projects section. It exists to test navigation, taxonomies, and presentation before real projects are published here.

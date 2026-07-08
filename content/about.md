@@ -1,42 +1,42 @@
 ---
-title: Sobre
-description: Quem é Enzo Capellari e o que este blog documenta.
-layout: wide
+title: About
+description: Who is Enzo Capellari and what this blog documents.
+layout: about
 toc: false
 ---
 
-Sou Enzo Capellari, estudante de Engenharia de Computação na PUCPR e profissional da área de telecomunicações na Lightera Brasil.
+I am Enzo Capellari, a Computer Engineering student at PUCPR and a telecommunications professional at Lightera Brasil.
 
-Trabalho e estudo temas ligados a desenvolvimento de software, troubleshooting, redes e telecomunicações, automação, infraestrutura, eletrônica e sistemas embarcados. No dia a dia, isso inclui investigar falhas, analisar logs, entender comportamento de equipamentos de rede, automatizar tarefas em Python e transformar problemas vagos em hipóteses testáveis.
+I work and study topics related to software development, troubleshooting, networking & telecommunications, automation, infrastructure, electronics, and embedded systems. In my daily routine, this includes investigating failures, analyzing logs, understanding network equipment behavior, automating tasks in Python, and turning vague problems into testable hypotheses.
 
-Este blog existe para registrar projetos, experimentos, decisões técnicas, dificuldades, soluções e a evolução do meu repertório ao longo da formação e da carreira. A ideia não é publicar apenas resultados prontos, mas também documentar o caminho: o que funcionou, o que quebrou, o que precisei revisar e o que aprendi no processo.
+This blog exists to record projects, experiments, technical decisions, difficulties, solutions, and the evolution of my skills throughout my education and career. The idea is not only to publish finished results, but also to document the path: what worked, what broke, what I needed to revise, and what I learned in the process.
 
-Os temas que aparecem por aqui tendem a girar em torno de:
+The topics that appear here tend to revolve around:
 
 <section class="home-section" aria-labelledby="areas-title">
   <div class="section-heading">
-    <p class="section-label">Áreas de interesse</p>
-    <h2 id="areas-title">Temas que orientam meus estudos e projetos</h2>
+    <p class="section-label">Areas of Interest</p>
+    <h2 id="areas-title">Topics guiding my studies and projects</h2>
   </div>
   <div class="about-layout">
     <div class="about-copy-card">
-      <p>Minha formação e meu trabalho se encontram em problemas concretos: sistemas que precisam funcionar, incidentes que precisam de diagnóstico e ferramentas que economizam tempo de operação.</p>
-      <p>Esse site organiza o que venho estudando e construindo, com foco em documentação técnica, projetos autorais e decisões de infraestrutura que eu consiga entender de ponta a ponta.</p>
+      <p>My education and my work meet in concrete problems: systems that need to function, incidents that need diagnostic, and tools that save operations time.</p>
+      <p>This site organizes what I have been studying and building, focusing on technical documentation, personal projects, and infrastructure decisions that I can understand end-to-end.</p>
     </div>
     <div class="interest-grid about-interest-grid">
-      <article class="interest-card"><h3>Desenvolvimento de software</h3><p>Python, automação, APIs, documentação e ferramentas para reduzir trabalho manual.</p></article>
-      <article class="interest-card"><h3>Redes e telecomunicações</h3><p>Troubleshooting, análise de logs, GPON, OLTs, ONTs e investigação orientada por evidências.</p></article>
-      <article class="interest-card"><h3>Infraestrutura e self-hosting</h3><p>Linux, Docker, PostgreSQL, observabilidade básica e ambientes que eu consiga entender e manter.</p></article>
-      <article class="interest-card"><h3>Sistemas embarcados e eletrônica</h3><p>Microcontroladores, Raspberry Pi Pico, ADC, PWM, UART e controle em projetos acadêmicos e experimentais.</p></article>
-      <article class="interest-card"><h3>IA aplicada ao desenvolvimento</h3><p>Agentes, engenharia de contexto, automação assistida e uso prático de IA em fluxos técnicos.</p></article>
-      <article class="interest-card"><h3>Open source e ferramentas</h3><p>Projetos públicos, colaboração, padronização de processos e utilitários para desenvolvedores.</p></article>
+      <article class="interest-card"><h3>Software development</h3><p>Python, automation, APIs, documentation, and tools to reduce manual labor.</p></article>
+      <article class="interest-card"><h3>Networking & telecom</h3><p>Troubleshooting, log analysis, GPON, OLTs, ONTs, and evidence-oriented investigation.</p></article>
+      <article class="interest-card"><h3>Infrastructure & self-hosting</h3><p>Linux, Docker, PostgreSQL, basic observability, and environments that I can understand and maintain.</p></article>
+      <article class="interest-card"><h3>Embedded systems & electronics</h3><p>Microcontrollers, Raspberry Pi Pico, ADC, PWM, UART, and control in academic and experimental projects.</p></article>
+      <article class="interest-card"><h3>AI applied to development</h3><p>Agents, context engineering, assisted automation, and practical use of AI in technical workflows.</p></article>
+      <article class="interest-card"><h3>Open source & tools</h3><p>Public projects, collaboration, process standardization, and utilities for developers.</p></article>
     </div>
   </div>
 </section>
 
-Perfis públicos:
+Public profiles:
 
 - GitHub: [github.com/zocacc](https://github.com/zocacc)
 - X/Twitter: [x.com/zocacc](https://x.com/zocacc)
 
-Se algum texto parecer excessivamente acabado, ele provavelmente ainda precisa de revisão. Este espaço acompanha uma trajetória em andamento.
+If any text seems excessively polished, it probably still needs revision. This space follows a trajectory in progress.

@@ -1,0 +1,77 @@
+# English Translations
+home:
+  other: "Home"
+blog:
+  other: "Blog"
+projects:
+  other: "Projects"
+about:
+  other: "About"
+search:
+  other: "Search"
+github:
+  other: "GitHub"
+twitter:
+  other: "X/Twitter"
+theme:
+  other: "Theme"
+language:
+  other: "Language"
+
+heroLead:
+  other: "Computer Engineering student, developer, and telecommunications professional."
+heroCopy:
+  other: "I write about software, networks, infrastructure, electronics, embedded systems, and the projects I develop during my studies and career."
+
+readMore:
+  other: "Read full article"
+categories:
+  other: "Categories"
+tags:
+  other: "Tags"
+published:
+  other: "Published"
+projectGithub:
+  other: "GitHub Project"
+mainLanguage:
+  other: "Main language"
+license:
+  other: "License"
+technologies:
+  other: "Technologies"
+repoLink:
+  other: "Repository"
+relatedArticle:
+  other: "Related article"
+openArticle:
+  other: "Open article"
+lessons:
+  other: "Key takeaways"
+recentArticles:
+  other: "Recent articles"
+featuredProjects:
+  other: "Featured projects"
+subRecentArticles:
+  other: "Long text for problems that deserve context"
+subFeaturedProjects:
+  other: "Public repositories with technical context"
+allArticles:
+  other: "View all posts"
+allProjects:
+  other: "Open projects section"
+readBlog:
+  other: "Read the blog"
+viewProjects:
+  other: "View projects"
+details:
+  other: "Details"
+lastArticle:
+  other: "Latest Post"
+readTime:
+  other: "read"
+emptyPosts:
+  other: "The first articles are in preparation. The section is already structured to receive technical publications with context and history."
+emptyProjects:
+  other: "Projects are still being documented. The section already includes status, technologies, GitHub links, related article, and key takeaways."
+emptyProjectsList:
+  other: "Public projects are still being organized. The section structure is ready to receive descriptions, status, technologies, links, and takeaways."
