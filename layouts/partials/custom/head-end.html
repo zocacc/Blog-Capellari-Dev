@@ -2,7 +2,7 @@
 (function() {
   var path = window.location.pathname;
   
-  // 1. Synchronize preferred-lang with the current path language
+  // 1. Synchronize preferred-lang with the current path language on page load
   if (path.startsWith('/pt/') || path === '/pt') {
     localStorage.setItem('preferred-lang', 'pt');
   } else if (path.startsWith('/es/') || path === '/es') {
@@ -32,5 +32,25 @@
       window.location.replace('/es/');
     }
   }
+
+  // 2. Intercept clicks on language selector links to update preferred-lang immediately
+  document.addEventListener('click', function(e) {
+    var langLink = e.target.closest('.hextra-language-options a');
+    if (langLink) {
+      try {
+        var url = new URL(langLink.href, window.location.href);
+        var p = url.pathname;
+        if (p.startsWith('/pt/') || p === '/pt' || p === '/pt/') {
+          localStorage.setItem('preferred-lang', 'pt');
+        } else if (p.startsWith('/es/') || p === '/es' || p === '/es/') {
+          localStorage.setItem('preferred-lang', 'es');
+        } else {
+          localStorage.setItem('preferred-lang', 'en');
+        }
+      } catch (err) {
+        // Fallback
+      }
+    }
+  });
 })();
 </script>
