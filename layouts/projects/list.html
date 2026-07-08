@@ -24,12 +24,12 @@
                   </span>
                   <span class="project-row-description">{{ partial "utils/page-description" . }}</span>
                   {{ with .Params.technologies }}
-                    <span class="meta-list project-row-tags" aria-label="Tecnologias do projeto">
+                    <span class="meta-list project-row-tags" aria-label="{{ T "technologies" }}">
                       {{ range . }}<span>{{ . }}</span>{{ end }}
                     </span>
                   {{ end }}
                 </span>
-                <span class="project-row-meta" aria-label="Metadados do projeto">
+                <span class="project-row-meta" aria-label="{{ T "repoLink" }}">
                   {{ with .Params.repo }}<span>{{ . }}</span>{{ end }}
                   {{ with .Params.language }}<span>{{ . }}</span>{{ end }}
                   {{ with .Params.license }}<span>{{ . }}</span>{{ end }}
@@ -39,7 +39,7 @@
           </div>
         {{ else }}
           <div class="empty-state hx:mt-10">
-            <p>Os projetos públicos ainda estão sendo organizados. A estrutura da seção já está pronta para receber descrições, status, tecnologias, links e aprendizados.</p>
+            <p>{{ T "emptyProjectsList" }}</p>
           </div>
         {{ end }}
       </main>

@@ -1,0 +1,77 @@
+# Spanish Translations
+home:
+  other: "Inicio"
+blog:
+  other: "Blog"
+projects:
+  other: "Proyectos"
+about:
+  other: "Sobre"
+search:
+  other: "Buscar"
+github:
+  other: "GitHub"
+twitter:
+  other: "X/Twitter"
+theme:
+  other: "Tema"
+language:
+  other: "Idioma"
+
+heroLead:
+  other: "Estudiante de Ingeniería de Computación, desarrollador y profesional de telecomunicaciones."
+heroCopy:
+  other: "Escribo sobre software, redes, infraestructura, electrónica, sistemas embebidos y los proyectos que desarrollo durante mi formación y carrera profesional."
+
+readMore:
+  other: "Leer artículo completo"
+categories:
+  other: "Categorías"
+tags:
+  other: "Etiquetas"
+published:
+  other: "Publicado"
+projectGithub:
+  other: "Proyecto en GitHub"
+mainLanguage:
+  other: "Idioma principal"
+license:
+  other: "Licencia"
+technologies:
+  other: "Tecnologías"
+repoLink:
+  other: "Repositorio"
+relatedArticle:
+  other: "Artículo relacionado"
+openArticle:
+  other: "Abrir artículo"
+lessons:
+  other: "Principales aprendizajes"
+recentArticles:
+  other: "Artículos recientes"
+featuredProjects:
+  other: "Proyectos destacados"
+subRecentArticles:
+  other: "Texto largo para problemas que merecen contexto"
+subFeaturedProjects:
+  other: "Repositorios públicos con contexto técnico"
+allArticles:
+  other: "Ver todos los artículos"
+allProjects:
+  other: "Abrir sección de proyectos"
+readBlog:
+  other: "Leer el blog"
+viewProjects:
+  other: "Ver proyectos"
+details:
+  other: "Detalles"
+lastArticle:
+  other: "Último Artículo"
+readTime:
+  other: "de lectura"
+emptyPosts:
+  other: "Los primeros artículos están en preparación. La sección ya está estructurada para recibir publicaciones técnicas con contexto e histórico."
+emptyProjects:
+  other: "Los proyectos aún se están documentando. La sección ya contempla estado, tecnologías, enlaces a GitHub, artículo relacionado y aprendizajes principales."
+emptyProjectsList:
+  other: "Los proyectos públicos aún se están organizando. La estructura de la sección ya está lista para recibir descripciones, estados, tecnologías, enlaces y aprendizajes."

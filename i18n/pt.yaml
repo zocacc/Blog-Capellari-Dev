@@ -1,0 +1,77 @@
+# Portuguese Translations
+home:
+  other: "Início"
+blog:
+  other: "Blog"
+projects:
+  other: "Projetos"
+about:
+  other: "Sobre"
+search:
+  other: "Busca"
+github:
+  other: "GitHub"
+twitter:
+  other: "X/Twitter"
+theme:
+  other: "Tema"
+language:
+  other: "Idioma"
+
+heroLead:
+  other: "Estudante de Engenharia de Computação, desenvolvedor e profissional de telecomunicações."
+heroCopy:
+  other: "Escrevo sobre software, redes, infraestrutura, eletrônica, sistemas embarcados e os projetos que desenvolvo durante minha formação e atuação profissional."
+
+readMore:
+  other: "Ler artigo completo"
+categories:
+  other: "Categorias"
+tags:
+  other: "Tags"
+published:
+  other: "Publicado"
+projectGithub:
+  other: "Projeto no GitHub"
+mainLanguage:
+  other: "Linguagem principal"
+license:
+  other: "Licença"
+technologies:
+  other: "Tecnologias"
+repoLink:
+  other: "Repositório"
+relatedArticle:
+  other: "Artigo relacionado"
+openArticle:
+  other: "Abrir artigo"
+lessons:
+  other: "Principais aprendizados"
+recentArticles:
+  other: "Artigos recentes"
+featuredProjects:
+  other: "Projetos em destaque"
+subRecentArticles:
+  other: "Texto longo para problemas que merecem contexto"
+subFeaturedProjects:
+  other: "Repositórios públicos com contexto técnico"
+allArticles:
+  other: "Ver arquivo completo"
+allProjects:
+  other: "Abrir seção de projetos"
+readBlog:
+  other: "Ler o blog"
+viewProjects:
+  other: "Ver projetos"
+details:
+  other: "Detalhes"
+lastArticle:
+  other: "Último Artigo"
+readTime:
+  other: "de leitura"
+emptyPosts:
+  other: "Os primeiros artigos estão em preparação. A seção já está estruturada para receber publicações técnicas com contexto e histórico."
+emptyProjects:
+  other: "Os projetos ainda estão sendo documentados. A seção já contempla status, tecnologias, links para GitHub, artigo relacionado e principais aprendizados."
+emptyProjectsList:
+  other: "Os projetos públicos ainda estão sendo organizados. A estrutura da seção já está pronta para receber descrições, status, tecnologias, links e aprendizados."

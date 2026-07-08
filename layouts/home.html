@@ -9,11 +9,11 @@
         <section class="hero-panel" aria-labelledby="hero-title">
           <p class="hero-kicker">Capellari Dev</p>
           <h1 id="hero-title">Enzo Capellari</h1>
-          <p class="hero-lead">Estudante de Engenharia de Computação, desenvolvedor e profissional de telecomunicações.</p>
-          <p class="hero-copy">Escrevo sobre software, redes, infraestrutura, eletrônica, sistemas embarcados e os projetos que desenvolvo durante minha formação e atuação profissional.</p>
+          <p class="hero-lead">{{ T "heroLead" }}</p>
+          <p class="hero-copy">{{ T "heroCopy" }}</p>
           <div class="hero-actions">
-            <a class="primary-link" href="{{ "/blog/" | relURL }}">Ler o blog</a>
-            <a class="secondary-link" href="{{ "/projetos/" | relURL }}">Ver projetos</a>
+            <a class="primary-link" href="{{ "/blog/" | relURL }}">{{ T "readBlog" }}</a>
+            <a class="secondary-link" href="{{ "/projetos/" | relURL }}">{{ T "viewProjects" }}</a>
             <a class="secondary-link" href="https://github.com/zocacc" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </section>
@@ -22,10 +22,10 @@
         <section class="home-section" aria-labelledby="recent-title">
           <div class="section-heading split-heading">
             <div>
-              <p class="section-label">Artigos recentes</p>
-              <h2 id="recent-title">Texto longo para problemas que merecem contexto</h2>
+              <p class="section-label">{{ T "recentArticles" }}</p>
+              <h2 id="recent-title">{{ T "subRecentArticles" }}</h2>
             </div>
-            <a class="section-link" href="{{ "/blog/" | relURL }}">Ver arquivo completo</a>
+            <a class="section-link" href="{{ "/blog/" | relURL }}">{{ T "allArticles" }}</a>
           </div>
           {{ if gt (len $recentPosts) 0 }}
             <div class="blog-featured-layout">
@@ -35,9 +35,9 @@
                   <article class="featured-article-card">
                     <div class="featured-content">
                       <div class="featured-meta-row">
-                        <span class="featured-badge">Último Artigo</span>
+                        <span class="featured-badge">{{ T "lastArticle" }}</span>
                         <span class="featured-date">{{ partial "utils/format-date" .Date }}</span>
-                        <span class="featured-reading-time">· {{ printf "%d min de leitura" .ReadingTime }}</span>
+                        <span class="featured-reading-time">· {{ printf "%d min %s" .ReadingTime (T "readTime") }}</span>
                       </div>
                       <h3 class="featured-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
                       <p class="featured-description">{{ partial "utils/page-description" . }}</p>
@@ -55,7 +55,7 @@
                       {{ end }}
                       
                       <div class="featured-action-row hx:mt-6">
-                        <a href="{{ .RelPermalink }}" class="featured-read-link">Ler artigo completo <span class="arrow">→</span></a>
+                        <a href="{{ .RelPermalink }}" class="featured-read-link">{{ T "readMore" }} <span class="arrow">→</span></a>
                       </div>
                     </div>
                     <div class="featured-visual">
@@ -91,7 +91,7 @@
                         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
                         <p>{{ partial "utils/page-description" . }}</p>
                         {{ with .Params.tags }}
-                          <ul class="meta-list" aria-label="Tags do artigo">
+                          <ul class="meta-list" aria-label="{{ T "tags" }}">
                             {{ range first 3 . }}<li>{{ . }}</li>{{ end }}
                           </ul>
                         {{ end }}
@@ -103,7 +103,7 @@
             </div>
           {{ else }}
             <div class="empty-state">
-              <p>Os primeiros artigos estão em preparação. A seção já está estruturada para receber publicações técnicas com contexto e histórico.</p>
+              <p>{{ T "emptyPosts" }}</p>
             </div>
           {{ end }}
         </section>
@@ -112,10 +112,10 @@
         <section class="home-section hx:mb-12" aria-labelledby="projects-title">
           <div class="section-heading split-heading">
             <div>
-              <p class="section-label">Projetos em destaque</p>
-              <h2 id="projects-title">Repositórios públicos com contexto técnico</h2>
+              <p class="section-label">{{ T "featuredProjects" }}</p>
+              <h2 id="projects-title">{{ T "subFeaturedProjects" }}</h2>
             </div>
-            <a class="section-link" href="{{ "/projetos/" | relURL }}">Abrir seção de projetos</a>
+            <a class="section-link" href="{{ "/projetos/" | relURL }}">{{ T "allProjects" }}</a>
           </div>
           {{ if gt (len $featuredProjects) 0 }}
             <div class="project-grid">
@@ -128,19 +128,19 @@
                   <p>{{ partial "utils/page-description" . }}</p>
                   {{ with .Params.repo }}<p class="project-repo">{{ . }}</p>{{ end }}
                   {{ with .Params.technologies }}
-                    <ul class="meta-list" aria-label="Tecnologias do projeto">
+                    <ul class="meta-list" aria-label="{{ T "technologies" }}">
                       {{ range . }}<li>{{ . }}</li>{{ end }}
                     </ul>
                   {{ end }}
                   <div class="project-links">
-                    <a href="{{ .RelPermalink }}">Detalhes</a>
+                    <a href="{{ .RelPermalink }}">{{ T "details" }}</a>
                   </div>
                 </article>
               {{ end }}
             </div>
           {{ else }}
             <div class="empty-state">
-              <p>Os projetos ainda estão sendo documentados. A seção já contempla status, tecnologias, links para GitHub, artigo relacionado e principais aprendizados.</p>
+              <p>{{ T "emptyProjects" }}</p>
             </div>
           {{ end }}
         </section>

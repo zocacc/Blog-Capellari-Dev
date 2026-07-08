@@ -32,12 +32,12 @@
                 <p class="blog-card-description">{{- partial "utils/page-description" . -}}</p>
                 
                 {{ if site.Params.blog.list.displayTags }}
-                  {{ with .Params.tags }}
-                    <ul class="meta-list" style="margin-top: 0.75rem;" aria-label="Tags do artigo">
-                      {{ range first 3 . }}<li>{{ . }}</li>{{ end }}
-                    </ul>
-                  {{ end }}
+                {{ with .Params.tags }}
+                  <ul class="meta-list" style="margin-top: 0.75rem;" aria-label="{{ T "tags" }}">
+                    {{ range first 3 . }}<li>{{ . }}</li>{{ end }}
+                  </ul>
                 {{ end }}
+              {{ end }}
               </div>
               
               {{ if .Params.image }}

@@ -1,13 +1,22 @@
 baseURL: https://enzocapellari.is-a.dev/
 title: Capellari Dev
 defaultContentLanguage: pt
+defaultContentLanguageInSubdir: false
 enableRobotsTXT: true
 
 languages:
   pt:
-    label: Português (Brasil)
+    label: Português
     locale: pt_BR
     weight: 1
+  en:
+    label: English
+    locale: en-US
+    weight: 2
+  es:
+    label: Español
+    locale: es-ES
+    weight: 3
 
 module:
   imports:
@@ -49,35 +58,48 @@ permalinks:
 menu:
   main:
     - name: Início
+      identifier: home
       pageRef: /
       weight: 1
     - name: Blog
+      identifier: blog
       pageRef: /blog
       weight: 2
     - name: Projetos
+      identifier: projects
       pageRef: /projetos
       weight: 3
     - name: Sobre
+      identifier: about
       pageRef: /about
       weight: 4
     - name: Busca
+      identifier: search
       weight: 5
       params:
         type: search
     - name: GitHub
+      identifier: github
       url: "https://github.com/zocacc"
       weight: 6
       params:
         icon: github
     - name: X/Twitter
+      identifier: twitter
       url: "https://x.com/zocacc"
       weight: 7
       params:
         icon: x-twitter
     - name: Tema
+      identifier: theme
       weight: 8
       params:
         type: theme-toggle
+    - name: Idioma
+      identifier: language
+      weight: 9
+      params:
+        type: language-switch
 
 params:
   description: Engenharia, software, redes e projetos construídos enquanto aprendo.

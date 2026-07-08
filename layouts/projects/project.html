@@ -15,33 +15,33 @@
         <dl class="project-meta-grid">
           {{ with .Date }}
             <div>
-              <dt>Publicado</dt>
+              <dt>{{ T "published" }}</dt>
               <dd>{{ partial "utils/format-date" . }}</dd>
             </div>
           {{ end }}
           {{ with .Params.repo }}
             <div>
-              <dt>Projeto no GitHub</dt>
+              <dt>{{ T "projectGithub" }}</dt>
               <dd>{{ . }}</dd>
             </div>
           {{ end }}
           {{ with .Params.language }}
             <div>
-              <dt>Linguagem principal</dt>
+              <dt>{{ T "mainLanguage" }}</dt>
               <dd>{{ . }}</dd>
             </div>
           {{ end }}
           {{ with .Params.license }}
             <div>
-              <dt>Licença</dt>
+              <dt>{{ T "license" }}</dt>
               <dd>{{ . }}</dd>
             </div>
           {{ end }}
           {{ with .Params.technologies }}
             <div>
-              <dt>Tecnologias</dt>
+              <dt>{{ T "technologies" }}</dt>
               <dd>
-                <ul class="meta-list" aria-label="Tecnologias do projeto">
+                <ul class="meta-list" aria-label="{{ T "technologies" }}">
                   {{ range . }}<li>{{ . }}</li>{{ end }}
                 </ul>
               </dd>
@@ -49,14 +49,14 @@
           {{ end }}
           {{ with .Params.github }}
             <div>
-              <dt>Repositório</dt>
+              <dt>{{ T "repoLink" }}</dt>
               <dd><a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ . }}</a></dd>
             </div>
           {{ end }}
           {{ with .Params.related_article }}
             <div>
-              <dt>Artigo relacionado</dt>
-              <dd><a href="{{ . | relURL }}">Abrir artigo</a></dd>
+              <dt>{{ T "relatedArticle" }}</dt>
+              <dd><a href="{{ . | relURL }}">{{ T "openArticle" }}</a></dd>
             </div>
           {{ end }}
         </dl>
@@ -65,7 +65,7 @@
 
         {{ with .Params.lessons }}
           <section class="project-lessons" aria-labelledby="lessons-title">
-            <h2 id="lessons-title">Principais aprendizados</h2>
+            <h2 id="lessons-title">{{ T "lessons" }}</h2>
             <ul>
               {{ range . }}<li>{{ . }}</li>{{ end }}
             </ul>
