@@ -1,0 +1,47 @@
+<button
+  class="capellari-theme-toggle"
+  type="button"
+  aria-label="Alternar para modo escuro"
+  title="Alternar para modo escuro"
+  data-theme-toggle
+>
+  <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true">
+    {{- partial "utils/icon.html" (dict "name" "sun" "attributes" "height=18 width=18") -}}
+  </span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true">
+    {{- partial "utils/icon.html" (dict "name" "moon" "attributes" "height=18 width=18") -}}
+  </span>
+  <span class="theme-toggle-label" data-theme-label>Escuro</span>
+</button>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const themeToggles = document.querySelectorAll("[data-theme-toggle]");
+
+    if (!themeToggles.length) return;
+
+    function syncThemeToggle() {
+      const isDark = document.documentElement.classList.contains("dark");
+
+      themeToggles.forEach(function (themeToggle) {
+        const themeLabel = themeToggle.querySelector("[data-theme-label]");
+        themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+        themeToggle.setAttribute("title", isDark ? "Alternar para modo claro" : "Alternar para modo escuro");
+        themeToggle.setAttribute("aria-label", isDark ? "Alternar para modo claro" : "Alternar para modo escuro");
+        if (themeLabel) themeLabel.textContent = isDark ? "Claro" : "Escuro";
+      });
+    }
+
+    syncThemeToggle();
+
+    themeToggles.forEach(function (themeToggle) {
+      if (themeToggle.dataset.themeToggleReady === "true") return;
+      themeToggle.dataset.themeToggleReady = "true";
+      themeToggle.addEventListener("click", function () {
+        const nextTheme = document.documentElement.classList.contains("dark") ? "light" : "dark";
+        setTheme(nextTheme);
+        localStorage.setItem("color-theme", nextTheme);
+        syncThemeToggle();
+      });
+    });
+  });
+</script>

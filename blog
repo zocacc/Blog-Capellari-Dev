@@ -18,6 +18,7 @@ usage() {
 Usage:
   ./blog bootstrap
   ./blog new "Titulo do post"
+  ./blog project "Nome do projeto"
   ./blog dev
   ./blog build
   ./blog publish
@@ -146,6 +147,27 @@ new_post() {
   printf '%s\n' "$target_rel"
 }
 
+new_project() {
+  local title="${1:-}"
+  [[ -n "$title" ]] || fail 'informe o nome do projeto: ./blog project "Nome do projeto"'
+
+  require_command iconv
+  ensure_dev_container
+
+  local slug target_rel target_abs
+  slug="$(slugify "$title")"
+  target_rel="content/projetos/${slug}/index.md"
+  target_abs="$PROJECT_ROOT/$target_rel"
+
+  [[ ! -e "$target_abs" ]] || fail "projeto ja existe: $target_rel"
+
+  log "criando projeto em $target_rel"
+  dev_exec hugo new "projetos/${slug}/index.md" >/dev/null
+
+  log "projeto criado"
+  printf '%s\n' "$target_rel"
+}
+
 dev_server() {
   ensure_dev_container
   log "iniciando preview em $DEV_BASE_URL"
@@ -186,6 +208,10 @@ main() {
     new)
       shift
       new_post "$@"
+      ;;
+    project)
+      shift
+      new_project "$@"
       ;;
     dev)
       shift

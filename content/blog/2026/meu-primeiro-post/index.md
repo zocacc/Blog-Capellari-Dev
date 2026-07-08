@@ -9,7 +9,7 @@ image: "/images/capivara-eng.png"
 categories:
   - Blog
 tags:
-  - hugo
+  - first
 authors:
   - name: Enzo Capellari
 toc: true

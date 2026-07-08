@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{- $projects := where .RegularPages.ByDate.Reverse "Type" "projects" -}}
+  {{- $projects := sort (where .RegularPages "Type" "projects") "Weight" -}}
   <div class="hx:mx-auto hx:flex hextra-max-page-width">
     {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
     <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
@@ -8,24 +8,33 @@
         <div class="content hx:mt-6">{{ .Content }}</div>
 
         {{ if gt (len $projects) 0 }}
-          <div class="project-grid project-grid-page">
+          <div class="project-list project-grid-page">
             {{ range $projects }}
-              <article class="project-card">
-                <div class="project-header">
-                  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-                  {{ with .Params.status }}<span class="status-badge">{{ . }}</span>{{ end }}
-                </div>
-                <p>{{ partial "utils/page-description" . }}</p>
-                {{ with .Params.technologies }}
-                  <ul class="meta-list" aria-label="Tecnologias do projeto">
-                    {{ range . }}<li>{{ . }}</li>{{ end }}
-                  </ul>
-                {{ end }}
-                <div class="project-links">
-                  {{ with .Params.github }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub</a>{{ end }}
-                  {{ with .Params.related_article }}<a href="{{ . | relURL }}">Artigo relacionado</a>{{ end }}
-                </div>
-              </article>
+              {{- $projectURL := .RelPermalink -}}
+              {{- $isExternal := false -}}
+              {{- with .Params.github -}}
+                {{- $projectURL = . -}}
+                {{- $isExternal = true -}}
+              {{- end -}}
+              <a class="project-row" href="{{ $projectURL }}" {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                <span class="project-row-main">
+                  <span class="project-row-title">
+                    <span>{{ .Title }}</span>
+                    {{ with .Params.status }}<span class="status-badge">{{ . }}</span>{{ end }}
+                  </span>
+                  <span class="project-row-description">{{ partial "utils/page-description" . }}</span>
+                  {{ with .Params.technologies }}
+                    <span class="meta-list project-row-tags" aria-label="Tecnologias do projeto">
+                      {{ range . }}<span>{{ . }}</span>{{ end }}
+                    </span>
+                  {{ end }}
+                </span>
+                <span class="project-row-meta" aria-label="Metadados do projeto">
+                  {{ with .Params.repo }}<span>{{ . }}</span>{{ end }}
+                  {{ with .Params.language }}<span>{{ . }}</span>{{ end }}
+                  {{ with .Params.license }}<span>{{ . }}</span>{{ end }}
+                </span>
+              </a>
             {{ end }}
           </div>
         {{ else }}
