@@ -1,15 +1,13 @@
 ---
 title: Sobre
 description: Quem é Enzo Capellari e o que este blog documenta.
-layout: wide
+layout: about
 toc: false
 ---
 
-<div style="margin: 1.5rem 0; overflow: hidden;">
-  <img src="/images/profile.jpg" alt="Enzo Capellari" style="width: 300px; height: 300px; border-radius: 50%; border: 2px solid var(--primary-color); float: left; margin-right: 1.75rem; margin-bottom: 1rem; object-fit: cover;" />
-  <p style="margin-top: 0;">Sou Enzo Capellari, estudante de Engenharia de Computação na PUCPR e profissional da área de telecomunicações na Lightera Brasil.</p>
-  <p>Trabalho e estudo temas ligados a desenvolvimento de software, troubleshooting, redes e telecomunicações, automação, infraestrutura, eletrônica e sistemas embarcados. No dia a dia, isso inclui investigar falhas, analisar logs, entender comportamento de equipamentos de rede, automatizar tarefas em Python e transformar problemas vagos em hipóteses testáveis.</p>
-</div>
+Sou Enzo Capellari, estudante de Engenharia de Computação na PUCPR e profissional da área de telecomunicações na Lightera Brasil.
+
+Trabalho e estudo temas ligados a desenvolvimento de software, troubleshooting, redes e telecomunicações, automação, infraestrutura, eletrônica e sistemas embarcados. No dia a dia, isso inclui investigar falhas, analisar logs, entender comportamento de equipamentos de rede, automatizar tarefas em Python e transformar problemas vagos em hipóteses testáveis.
 
 Este blog existe para registrar projetos, experimentos, decisões técnicas, dificuldades, soluções e a evolução do meu repertório ao longo da formação e da carreira. A ideia não é publicar apenas resultados prontos, mas também documentar o caminho: o que funcionou, o que quebrou, o que precisei revisar e o que aprendi no processo.
 
