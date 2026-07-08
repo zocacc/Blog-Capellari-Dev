@@ -74,6 +74,10 @@ menu:
       weight: 7
       params:
         icon: x-twitter
+    - name: Tema
+      weight: 8
+      params:
+        type: theme-toggle
 
 params:
   description: Engenharia, software, redes e projetos construídos enquanto aprendo.
@@ -92,7 +96,7 @@ params:
 
   theme:
     default: system
-    displayToggle: true
+    displayToggle: false
 
   footer:
     enable: true

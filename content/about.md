@@ -13,12 +13,26 @@ Este blog existe para registrar projetos, experimentos, decisões técnicas, dif
 
 Os temas que aparecem por aqui tendem a girar em torno de:
 
-- software e automação;
-- redes, telecomunicações e infraestrutura;
-- Linux, Docker, PostgreSQL, APIs e ferramentas de desenvolvimento;
-- eletrônica, microcontroladores, Raspberry Pi Pico e sistemas embarcados;
-- inteligência artificial aplicada ao desenvolvimento;
-- documentação técnica, open source e ferramentas para desenvolvedores.
+<section class="home-section" aria-labelledby="areas-title">
+  <div class="section-heading">
+    <p class="section-label">Áreas de interesse</p>
+    <h2 id="areas-title">Temas que orientam meus estudos e projetos</h2>
+  </div>
+  <div class="about-layout">
+    <div class="about-copy-card">
+      <p>Minha formação e meu trabalho se encontram em problemas concretos: sistemas que precisam funcionar, incidentes que precisam de diagnóstico e ferramentas que economizam tempo de operação.</p>
+      <p>Esse site organiza o que venho estudando e construindo, com foco em documentação técnica, projetos autorais e decisões de infraestrutura que eu consiga entender de ponta a ponta.</p>
+    </div>
+    <div class="interest-grid about-interest-grid">
+      <article class="interest-card"><h3>Desenvolvimento de software</h3><p>Python, automação, APIs, documentação e ferramentas para reduzir trabalho manual.</p></article>
+      <article class="interest-card"><h3>Redes e telecomunicações</h3><p>Troubleshooting, análise de logs, GPON, OLTs, ONTs e investigação orientada por evidências.</p></article>
+      <article class="interest-card"><h3>Infraestrutura e self-hosting</h3><p>Linux, Docker, PostgreSQL, observabilidade básica e ambientes que eu consiga entender e manter.</p></article>
+      <article class="interest-card"><h3>Sistemas embarcados e eletrônica</h3><p>Microcontroladores, Raspberry Pi Pico, ADC, PWM, UART e controle em projetos acadêmicos e experimentais.</p></article>
+      <article class="interest-card"><h3>IA aplicada ao desenvolvimento</h3><p>Agentes, engenharia de contexto, automação assistida e uso prático de IA em fluxos técnicos.</p></article>
+      <article class="interest-card"><h3>Open source e ferramentas</h3><p>Projetos públicos, colaboração, padronização de processos e utilitários para desenvolvedores.</p></article>
+    </div>
+  </div>
+</section>
 
 Perfis públicos:
 

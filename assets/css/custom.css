@@ -48,6 +48,7 @@ html.dark body {
 }
 
 .hero-panel,
+.about-copy-card,
 .interest-card,
 .article-card,
 .project-card,
@@ -63,6 +64,11 @@ html.dark body {
 .hero-panel {
   padding: 2rem;
   border-radius: 1.75rem;
+}
+
+.about-copy-card {
+  padding: 1.5rem;
+  border-radius: 1.5rem;
 }
 
 .hero-kicker,
@@ -105,6 +111,7 @@ html.dark body {
 
 .hero-copy,
 .section-heading p,
+.about-copy-card p,
 .article-card p,
 .project-card p,
 .empty-state p,
@@ -172,6 +179,19 @@ html.dark body {
   margin-top: 3rem;
 }
 
+.about-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-copy-card p:first-child {
+  margin-top: 0;
+}
+
+.about-copy-card p:last-child {
+  margin-bottom: 0;
+}
+
 .section-heading {
   margin-bottom: 1.25rem;
 }
@@ -188,6 +208,10 @@ html.dark body {
 .project-grid {
   display: grid;
   gap: 1rem;
+}
+
+.about-interest-grid {
+  align-content: start;
 }
 
 .interest-grid {
@@ -256,6 +280,49 @@ html.dark body {
   align-items: start;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.capellari-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.25rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--capellari-border);
+  border-radius: 999px;
+  background: var(--capellari-surface-strong);
+  color: var(--capellari-text-strong);
+  cursor: pointer;
+  line-height: 1;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.capellari-theme-toggle:hover,
+.capellari-theme-toggle:focus-visible {
+  border-color: var(--primary-color);
+  background: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.theme-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-icon-moon,
+html.dark .theme-toggle-icon-sun {
+  display: none;
+}
+
+html.dark .theme-toggle-icon-moon {
+  display: inline-flex;
+}
+
+.theme-toggle-label {
+  font-size: 0.92rem;
+  font-weight: 600;
 }
 
 .project-grid-page {
@@ -333,6 +400,7 @@ html.dark body {
 
 @media (max-width: 768px) {
   .hero-panel,
+  .about-copy-card,
   .interest-card,
   .article-card,
   .project-card,
@@ -353,6 +421,15 @@ html.dark body {
   .site-footer-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .capellari-theme-toggle {
+    min-width: 2.25rem;
+    padding-inline: 0.55rem;
+  }
+
+  .theme-toggle-label {
+    display: none;
   }
 }
 
@@ -619,4 +696,10 @@ html.dark .category-badge {
 }
 .about-author-card:hover {
   border-color: var(--primary-color);
+}
+
+@media (min-width: 960px) {
+  .about-layout {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.45fr);
+  }
 }
