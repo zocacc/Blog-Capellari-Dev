@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{- $projects := where .RegularPages.ByDate.Reverse "Type" "projects" -}}
+  {{- $projects := sort (where .RegularPages "Type" "projects") "Weight" -}}
   <div class="hx:mx-auto hx:flex hextra-max-page-width">
     {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
     <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
@@ -10,18 +10,39 @@
         {{ if gt (len $projects) 0 }}
           <div class="project-grid project-grid-page">
             {{ range $projects }}
-              <article class="project-card">
+              <article class="project-card project-card-detailed">
                 <div class="project-header">
                   <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
                   {{ with .Params.status }}<span class="status-badge">{{ . }}</span>{{ end }}
                 </div>
                 <p>{{ partial "utils/page-description" . }}</p>
+                <dl class="project-card-meta" aria-label="Metadados do projeto">
+                  {{ with .Params.repo }}
+                    <div>
+                      <dt>Repo</dt>
+                      <dd>{{ . }}</dd>
+                    </div>
+                  {{ end }}
+                  {{ with .Params.language }}
+                    <div>
+                      <dt>Linguagem</dt>
+                      <dd>{{ . }}</dd>
+                    </div>
+                  {{ end }}
+                  {{ with .Params.license }}
+                    <div>
+                      <dt>Licença</dt>
+                      <dd>{{ . }}</dd>
+                    </div>
+                  {{ end }}
+                </dl>
                 {{ with .Params.technologies }}
                   <ul class="meta-list" aria-label="Tecnologias do projeto">
                     {{ range . }}<li>{{ . }}</li>{{ end }}
                   </ul>
                 {{ end }}
                 <div class="project-links">
+                  <a href="{{ .RelPermalink }}">Detalhes</a>
                   {{ with .Params.github }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub</a>{{ end }}
                   {{ with .Params.related_article }}<a href="{{ . | relURL }}">Artigo relacionado</a>{{ end }}
                 </div>

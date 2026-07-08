@@ -1,6 +1,7 @@
 {{ define "main" }}
   {{- $recentPosts := first 3 (where site.RegularPages.ByDate.Reverse "Type" "blog") -}}
-  {{- $featuredProjects := first 2 (where site.RegularPages.ByDate.Reverse "Type" "projects") -}}
+  {{- $allProjects := where site.RegularPages "Type" "projects" -}}
+  {{- $featuredProjects := first 3 (sort (where $allProjects ".Params.featured" true) "Weight") -}}
   <div class="hx:mx-auto hx:flex hextra-max-page-width">
     {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" false) }}
     <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-12">
@@ -112,7 +113,7 @@
           <div class="section-heading split-heading">
             <div>
               <p class="section-label">Projetos em destaque</p>
-              <h2 id="projects-title">Estrutura pronta para documentar trabalho real</h2>
+              <h2 id="projects-title">Repositórios públicos com contexto técnico</h2>
             </div>
             <a class="section-link" href="{{ "/projetos/" | relURL }}">Abrir seção de projetos</a>
           </div>
@@ -125,11 +126,15 @@
                     {{ with .Params.status }}<span class="status-badge">{{ . }}</span>{{ end }}
                   </div>
                   <p>{{ partial "utils/page-description" . }}</p>
+                  {{ with .Params.repo }}<p class="project-repo">{{ . }}</p>{{ end }}
                   {{ with .Params.technologies }}
                     <ul class="meta-list" aria-label="Tecnologias do projeto">
                       {{ range . }}<li>{{ . }}</li>{{ end }}
                     </ul>
                   {{ end }}
+                  <div class="project-links">
+                    <a href="{{ .RelPermalink }}">Detalhes</a>
+                  </div>
                 </article>
               {{ end }}
             </div>

@@ -19,6 +19,24 @@
               <dd>{{ partial "utils/format-date" . }}</dd>
             </div>
           {{ end }}
+          {{ with .Params.repo }}
+            <div>
+              <dt>Projeto no GitHub</dt>
+              <dd>{{ . }}</dd>
+            </div>
+          {{ end }}
+          {{ with .Params.language }}
+            <div>
+              <dt>Linguagem principal</dt>
+              <dd>{{ . }}</dd>
+            </div>
+          {{ end }}
+          {{ with .Params.license }}
+            <div>
+              <dt>Licença</dt>
+              <dd>{{ . }}</dd>
+            </div>
+          {{ end }}
           {{ with .Params.technologies }}
             <div>
               <dt>Tecnologias</dt>

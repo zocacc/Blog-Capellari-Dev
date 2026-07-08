@@ -703,3 +703,39 @@ html.dark .category-badge {
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.45fr);
   }
 }
+
+.project-repo {
+  margin: -0.2rem 0 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.project-card-meta {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1rem 0 0;
+}
+
+.project-card-meta div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--capellari-border);
+}
+
+.project-card-meta dt {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--capellari-text-soft);
+}
+
+.project-card-meta dd {
+  margin: 0;
+  color: var(--capellari-text-strong);
+  text-align: right;
+}
