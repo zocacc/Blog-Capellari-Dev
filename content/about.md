@@ -5,12 +5,10 @@ layout: wide
 toc: false
 ---
 
-<div class="hx:flex hx:flex-col hx:sm:flex-row hx:gap-6 hx:items-center hx:sm:items-start hx:my-6">
-  <img src="/images/profile.jpg" alt="Enzo Capellari" class="hx:w-28 hx:h-28 hx:rounded-full hx:border-2 hx:border-primary-500 hx:shadow-sm hx:shrink-0" />
-  <div class="hx:flex-1">
-    <p class="hx:mt-0">Sou Enzo Capellari, estudante de Engenharia de Computação na PUCPR e profissional da área de telecomunicações na Lightera Brasil.</p>
-    <p>Trabalho e estudo temas ligados a desenvolvimento de software, troubleshooting, redes e telecomunicações, automação, infraestrutura, eletrônica e sistemas embarcados. No dia a dia, isso inclui investigar falhas, analisar logs, entender comportamento de equipamentos de rede, automatizar tarefas em Python e transformar problemas vagos em hipóteses testáveis.</p>
-  </div>
+<div style="margin: 1.5rem 0; overflow: hidden;">
+  <img src="/images/profile.jpg" alt="Enzo Capellari" style="width: 96px; height: 96px; border-radius: 50%; border: 2px solid var(--primary-color); float: left; margin-right: 1.25rem; margin-bottom: 0.5rem; object-fit: cover;" />
+  <p style="margin-top: 0;">Sou Enzo Capellari, estudante de Engenharia de Computação na PUCPR e profissional da área de telecomunicações na Lightera Brasil.</p>
+  <p>Trabalho e estudo temas ligados a desenvolvimento de software, troubleshooting, redes e telecomunicações, automação, infraestrutura, eletrônica e sistemas embarcados. No dia a dia, isso inclui investigar falhas, analisar logs, entender comportamento de equipamentos de rede, automatizar tarefas em Python e transformar problemas vagos em hipóteses testáveis.</p>
 </div>
 
 Este blog existe para registrar projetos, experimentos, decisões técnicas, dificuldades, soluções e a evolução do meu repertório ao longo da formação e da carreira. A ideia não é publicar apenas resultados prontos, mas também documentar o caminho: o que funcionou, o que quebrou, o que precisei revisar e o que aprendi no processo.
