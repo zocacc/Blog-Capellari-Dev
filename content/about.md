@@ -6,7 +6,7 @@ toc: false
 ---
 
 <div style="margin: 1.5rem 0; overflow: hidden;">
-  <img src="/images/profile.jpg" alt="Enzo Capellari" style="width: 96px; height: 96px; border-radius: 50%; border: 2px solid var(--primary-color); float: left; margin-right: 1.25rem; margin-bottom: 0.5rem; object-fit: cover;" />
+  <img src="/images/profile.jpg" alt="Enzo Capellari" style="width: 180px; height: 180px; border-radius: 50%; border: 2px solid var(--primary-color); float: left; margin-right: 1.5rem; margin-bottom: 0.75rem; object-fit: cover;" />
   <p style="margin-top: 0;">Sou Enzo Capellari, estudante de Engenharia de Computação na PUCPR e profissional da área de telecomunicações na Lightera Brasil.</p>
   <p>Trabalho e estudo temas ligados a desenvolvimento de software, troubleshooting, redes e telecomunicações, automação, infraestrutura, eletrônica e sistemas embarcados. No dia a dia, isso inclui investigar falhas, analisar logs, entender comportamento de equipamentos de rede, automatizar tarefas em Python e transformar problemas vagos em hipóteses testáveis.</p>
 </div>
