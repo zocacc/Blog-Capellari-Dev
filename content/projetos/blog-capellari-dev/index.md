@@ -3,8 +3,8 @@ title: Blog Capellari Dev
 date: 2026-06-25
 lastmod: 2026-07-08
 type: projects
-description: Site pessoal em Hugo para publicar artigos, projetos e documentação técnica com deploy estático.
-status: Publicado
+description: Personal site in Hugo to publish articles, projects, and technical documentation with static deployment.
+status: Published
 featured: true
 weight: 1
 repo: zocacc/Blog-Capellari-Dev
@@ -17,10 +17,10 @@ technologies:
   - Caddy
   - GitHub
 lessons:
-  - Estruturar conteúdo como páginas Markdown deixa o site fácil de versionar e publicar.
-  - Separar layout, conteúdo e deploy reduz retrabalho quando o domínio ou a infraestrutura mudam.
+  - Structuring content as Markdown pages makes the site easy to version and publish.
+  - Separating layout, content, and deployment reduces rework when the domain or infrastructure changes.
 ---
 
-Este é o repositório do próprio Capellari Dev. O projeto organiza o site como um blog estático em Hugo, com seções para artigos, projetos e páginas institucionais.
+This is the repository of Capellari Dev itself. The project organizes the site as a Hugo static blog, with sections for articles, projects, and informational pages.
 
-O objetivo é manter um espaço técnico simples de atualizar, versionado no GitHub e preparado para publicação estática com Caddy.
+The goal is to maintain a technical space that is simple to update, versioned on GitHub, and ready for static publication with Caddy.

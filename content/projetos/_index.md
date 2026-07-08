@@ -1,8 +1,8 @@
 ---
-title: Projetos
-description: Projetos técnicos em andamento, documentados como trabalho real.
+title: Projects
+description: Technical projects in progress, documented as real work.
 type: projects
 toc: false
 ---
 
-Esta seção reúne projetos técnicos em diferentes estágios de documentação. A estrutura já está preparada para descrição, status, tecnologias, repositório, artigo relacionado e principais aprendizados.
+This section gathers technical projects in different stages of documentation. The structure is already prepared for description, status, technologies, repository, related article, and key takeaways.

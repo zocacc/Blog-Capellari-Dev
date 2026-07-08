@@ -3,19 +3,19 @@ title: producer-consumer
 date: 2025-08-28
 lastmod: 2025-08-28
 type: projects
-description: Repositório público para estudo do padrão produtor-consumidor e seus conceitos de concorrência.
-status: Público
+description: Public repository for studying the producer-consumer pattern and its concurrency concepts.
+status: Public
 featured: false
 weight: 4
 repo: zocacc/producer-consumer
 github: https://github.com/zocacc/producer-consumer
 technologies:
-  - Concorrência
-  - Sistemas operacionais
+  - Concurrency
+  - Operating Systems
   - GitHub
 lessons:
-  - Problemas de concorrência ficam mais claros quando documentados com o modelo mental usado na implementação.
-  - Mesmo sem linguagem principal detectada, o repositório pode ser registrado como estudo técnico.
+  - Concurrency problems become clearer when documented with the mental model used in the implementation.
+  - Even without a main language detected, the repository can be registered as a technical study.
 ---
 
-Projeto público usado para organizar estudo sobre produtor-consumidor. O card preserva o link do repositório e deixa a documentação aberta para evolução.
+Public project used to organize a study on producer-consumer. The card preserves the link to the repository and leaves the documentation open for evolution.

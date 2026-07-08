@@ -1,20 +1,23 @@
 baseURL: https://enzocapellari.is-a.dev/
 title: Capellari Dev
-defaultContentLanguage: pt
+defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
 enableRobotsTXT: true
 
 languages:
-  pt:
-    label: Português
-    locale: pt_BR
-    weight: 1
   en:
     label: English
+    languageName: English
     locale: en-US
+    weight: 1
+  pt:
+    label: Português
+    languageName: Português
+    locale: pt_BR
     weight: 2
   es:
     label: Español
+    languageName: Español
     locale: es-ES
     weight: 3
 

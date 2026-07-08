@@ -1,10 +1,10 @@
 ---
-title: 'Meu Primeiro Post'
+title: 'My First Post'
 date: 2026-07-06T23:15:03Z
 lastmod: 2026-07-06T23:15:03Z
 slug: 'meu-primeiro-post'
 draft: false
-description: "Ideia central do Blog e motivações"
+description: "Central idea of the Blog and motivations"
 image: "/images/capivara-eng.png"
 categories:
   - Blog
@@ -15,66 +15,66 @@ authors:
 toc: true
 ---
 
-## Contexto
+## Context
 
-Bom, primeiramente gostaria de esclarecer um pouco sobre a ideia fundamental deste site.
+Well, first of all, I would like to clarify a bit about the fundamental idea of this site.
 
-Não sou nenhum mestre cuca ou sênior de tecnologia. Sou apenas um jovem de 23 anos que quer documentar sua jornada de estudos e mostrar o processo de desenvolvimento sobre temas que gosta.
+I am not a tech guru or senior. I am just a 23-year-old who wants to document his study journey and show the development process on topics he likes.
 
-Sou o tipo de pessoa que tem interesse por assuntos diversos, mas acabo rapidamente me cansando quando chego em determinado nível e percebo que o esforço para aprender mais não me traz um retorno prático tão claro.
+I am the type of person who is interested in diverse subjects, but I quickly get tired when I reach a certain level and realize that the effort to learn more does not bring me a clear practical return.
 
-Um exemplo disso é a regra de Pareto, onde 20% do conhecimento de um tema resolve 80% dos problemas. Pelo menos é assim que eu enxergo na prática.
+An example of this is the Pareto principle, where 20% of the knowledge of a topic solves 80% of the problems. At least that's how I see it in practice.
 
-Entendo que isso não é, de fato, um problema de aprendizado, mas sim uma busca por eficiência. Meu tempo é escasso, então preciso otimizar o tempo livre que tenho, principalmente quando não estou estudando algo por obrigação, mas sim por interesse.
+I understand that this is not, in fact, a learning problem, but a search for efficiency. My time is scarce, so I need to optimize the free time I have, especially when I am not studying something out of obligation, but out of interest.
 
-## Quem sou eu
+## Who am I
 
-Sou estudante de Engenharia de Computação, que por si só já é um curso bem difícil e exige estudo contínuo.
+I am a Computer Engineering student, which in itself is already a very difficult course that requires continuous study.
 
-Além disso, trabalho no suporte técnico de uma fábrica de cabos, a Lightera, que possui um setor dedicado à implantação de redes GPON — Gigabit Passive Optical Network — uma área que exige um conhecimento técnico aprofundado e bastante nichado em redes.
+In addition, I work in the technical support of a cable factory, Lightera, which has a sector dedicated to the deployment of GPON networks — Gigabit Passive Optical Network — an area that requires deep and quite niche knowledge in networks.
 
-Na empresa, atuo no setor de Pós-vendas, Suporte Técnico e Implantação de Projetos, também conhecido como STC.
+At the company, I work in the Post-sales, Technical Support, and Project Deployment sector, also known as STC.
 
-Hoje, trabalho majoritariamente dedicado à área de IoT, com o produto EyON, que foi criado para auxiliar provedores de internet a monitorarem, por meio de sensores, possíveis falhas na fibra óptica de forma mais segmentada. A ideia é reduzir o custo operacional e o tempo necessário para identificar problemas na rede.
+Today, I work mostly dedicated to the IoT area, with the EyON product, which was created to help internet providers monitor, through sensors, possible failures in fiber optics in a more segmented way. The idea is to reduce the operational cost and the time required to identify problems in the network.
 
-## Minha atuação
+## My work
 
-O que me destacou na empresa foi o desenvolvimento de uma ferramenta em Python que coleta métricas de sensores e facilita a visualização de sensores problemáticos ou com mau funcionamento.
+What made me stand out in the company was the development of a tool in Python that collects metrics from sensors and facilitates the visualization of problematic or malfunctioning sensors.
 
-Acredito que farei um post dedicado apenas para explicar melhor essa atuação, o problema que existia, como a ferramenta surgiu e quais resultados ela trouxe.
+I believe I will make a post dedicated only to explaining this work better, the problem that existed, how the tool came about, and what results it brought.
 
-## Objetivo do blog
+## Objective of the blog
 
-O objetivo deste blog é mostrar as ideias que tenho e criar uma comunidade interessada em trocar ideias, informações e direcionamentos.
+The objective of this blog is to show the ideas I have and create a community interested in exchanging ideas, information, and directions.
 
-Como jovem, às vezes me sinto perdido sobre qual direção seguir, tanto pensando em um futuro como empresário quanto no presente como funcionário.
+As a young person, sometimes I feel lost about which direction to follow, both thinking about a future as an entrepreneur and in the present as an employee.
 
-A ideia — e talvez o “sonho” — é me tornar um nômade digital, construindo um negócio digital que, no longo prazo, me dê liberdade.
+The idea — and perhaps the "dream" — is to become a digital nomad, building a digital business that, in the long term, gives me freedom.
 
-Não pretendo fazer posts muito longos neste blog. Acredito que posts pontuais e mais direcionados sejam mais interessantes, principalmente no mundo “tiktokenizado” em que vivemos.
+I don't intend to make very long posts on this blog. I believe that timely and more directed posts are more interesting, especially in the "tiktokenized" world we live in.
 
-Tenho uma cuca cheia de ideias, e acho que este é um bom lugar para despejar e organizar o que penso.
+I have a head full of ideas, and I think this is a good place to dump and organize what I think.
 
-## Inspiração
+## Inspiration
 
-Uso como inspiração o grande mestre Fabio Akita, dono do AkitaOnRails.com, que tomo como referência para o trajeto que pretendo seguir na vida.
+I use the great master Fabio Akita, owner of AkitaOnRails.com, as inspiration, whom I take as a reference for the path I intend to follow in life.
 
-Não quero repetir os passos dele, mas usar como base a filosofia que ele aborda em seu canal e repete constantemente por onde passa:
+I don't want to repeat his steps, but use as a base the philosophy he addresses on his channel and repeats constantly wherever he goes:
 
-> “Não terceirize suas decisões.”
+> “Do not outsource your decisions.”
 
-Acho esse um bom lema para viver.
+I think this is a good motto to live by.
 
-No fim das contas, ninguém tem muita ideia do que está fazendo nessa bola azul de água que chamamos de Terra. A maioria apenas caga regra, imputando sobre o outro a própria visão de mundo.
+In the end, nobody has much of an idea of what they are doing on this blue ball of water we call Earth. Most just make up rules, projecting their own worldview onto others.
 
-Isso funciona para passivos mentais que não conseguem discernir e racionalizar a própria vida sem depender de pitaco alheio.
+This works for mental passives who cannot discern and rationalize their own lives without depending on other people's opinions.
 
-## Encerramento
+## Closing
 
-Bom, sem me estender muito no tema e quase transformar isso em um rant, creio que esse foi um breve overview da intenção por trás deste projeto.
+Well, without extending too much on the subject and almost turning this into a rant, I believe this was a brief overview of the intention behind this project.
 
-Gosto de pensar que, dessa vez, vou fazer disso uma rotina — e não apenas mais um projeto que ficou embaixo do tapete, como tantos outros.
+I like to think that, this time, I will make this a routine — and not just another project that got swept under the rug, like so many others.
 
-Espero que goste de acompanhar a jornada.
+I hope you enjoy following the journey.
 
-Desde já, obrigado pela companhia!
+Thanks for the company!

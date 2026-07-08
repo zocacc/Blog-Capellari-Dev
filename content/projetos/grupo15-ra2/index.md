@@ -3,8 +3,8 @@ title: grupo15_RA2
 date: 2025-10-13
 lastmod: 2025-10-14
 type: projects
-description: Repositório público em Python usado para trabalho acadêmico e organização de código em grupo.
-status: Público
+description: Public Python repository used for academic work and group code organization.
+status: Public
 featured: true
 weight: 2
 repo: zocacc/grupo15_RA2
@@ -13,10 +13,10 @@ language: Python
 technologies:
   - Python
   - GitHub
-  - Trabalho acadêmico
+  - Academic work
 lessons:
-  - Projetos em grupo exigem estrutura clara de arquivos e histórico de mudanças compreensível.
-  - Publicar o código facilita revisão, rastreabilidade e documentação posterior.
+  - Group projects require a clear file structure and a comprehensible change history.
+  - Publishing the code facilitates review, traceability, and subsequent documentation.
 ---
 
-Projeto público em Python mantido no GitHub. A página registra o repositório como parte do portfólio técnico e deixa espaço para documentar contexto, decisões e aprendizados do trabalho.
+Public Python project maintained on GitHub. The page registers the repository as part of the technical portfolio and leaves space to document context, decisions, and lessons learned from the work.

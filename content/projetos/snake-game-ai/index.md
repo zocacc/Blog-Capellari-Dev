@@ -3,19 +3,19 @@ title: SnakeGameAi
 date: 2023-03-05
 lastmod: 2023-03-05
 type: projects
-description: Repositório público para experimento com jogo Snake e ideias de inteligência artificial.
-status: Público
+description: Public repository for an experiment with the Snake game and artificial intelligence concepts.
+status: Public
 featured: false
 weight: 6
 repo: zocacc/SnakeGameAi
 github: https://github.com/zocacc/SnakeGameAi
 technologies:
-  - Jogos
-  - Inteligência artificial
+  - Games
+  - Artificial intelligence
   - GitHub
 lessons:
-  - Jogos simples são bons ambientes para experimentar regras, estado e tomada de decisão.
-  - Documentar experimentos antigos ajuda a mostrar evolução técnica ao longo do tempo.
+  - Simple games are good environments to experiment with rules, state, and decision making.
+  - Documenting old experiments helps show technical evolution over time.
 ---
 
-Experimento público relacionado ao jogo Snake e inteligência artificial. A página mantém o projeto visível no site e centraliza o acesso ao repositório.
+Public experiment related to the Snake game and artificial intelligence. The page keeps the project visible on the site and centralizes access to the repository.
