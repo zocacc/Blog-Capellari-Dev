@@ -8,45 +8,33 @@
         <div class="content hx:mt-6">{{ .Content }}</div>
 
         {{ if gt (len $projects) 0 }}
-          <div class="project-grid project-grid-page">
+          <div class="project-list project-grid-page">
             {{ range $projects }}
-              <article class="project-card project-card-detailed">
-                <div class="project-header">
-                  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-                  {{ with .Params.status }}<span class="status-badge">{{ . }}</span>{{ end }}
-                </div>
-                <p>{{ partial "utils/page-description" . }}</p>
-                <dl class="project-card-meta" aria-label="Metadados do projeto">
-                  {{ with .Params.repo }}
-                    <div>
-                      <dt>Repo</dt>
-                      <dd>{{ . }}</dd>
-                    </div>
+              {{- $projectURL := .RelPermalink -}}
+              {{- $isExternal := false -}}
+              {{- with .Params.github -}}
+                {{- $projectURL = . -}}
+                {{- $isExternal = true -}}
+              {{- end -}}
+              <a class="project-row" href="{{ $projectURL }}" {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                <span class="project-row-main">
+                  <span class="project-row-title">
+                    <span>{{ .Title }}</span>
+                    {{ with .Params.status }}<span class="status-badge">{{ . }}</span>{{ end }}
+                  </span>
+                  <span class="project-row-description">{{ partial "utils/page-description" . }}</span>
+                  {{ with .Params.technologies }}
+                    <span class="meta-list project-row-tags" aria-label="Tecnologias do projeto">
+                      {{ range . }}<span>{{ . }}</span>{{ end }}
+                    </span>
                   {{ end }}
-                  {{ with .Params.language }}
-                    <div>
-                      <dt>Linguagem</dt>
-                      <dd>{{ . }}</dd>
-                    </div>
-                  {{ end }}
-                  {{ with .Params.license }}
-                    <div>
-                      <dt>Licença</dt>
-                      <dd>{{ . }}</dd>
-                    </div>
-                  {{ end }}
-                </dl>
-                {{ with .Params.technologies }}
-                  <ul class="meta-list" aria-label="Tecnologias do projeto">
-                    {{ range . }}<li>{{ . }}</li>{{ end }}
-                  </ul>
-                {{ end }}
-                <div class="project-links">
-                  <a href="{{ .RelPermalink }}">Detalhes</a>
-                  {{ with .Params.github }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub</a>{{ end }}
-                  {{ with .Params.related_article }}<a href="{{ . | relURL }}">Artigo relacionado</a>{{ end }}
-                </div>
-              </article>
+                </span>
+                <span class="project-row-meta" aria-label="Metadados do projeto">
+                  {{ with .Params.repo }}<span>{{ . }}</span>{{ end }}
+                  {{ with .Params.language }}<span>{{ . }}</span>{{ end }}
+                  {{ with .Params.license }}<span>{{ . }}</span>{{ end }}
+                </span>
+              </a>
             {{ end }}
           </div>
         {{ else }}
