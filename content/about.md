@@ -5,9 +5,13 @@ layout: wide
 toc: false
 ---
 
-Sou Enzo Capellari, estudante de Engenharia de Computação na PUCPR e profissional da área de telecomunicações na Lightera Brasil.
-
-Trabalho e estudo temas ligados a desenvolvimento de software, troubleshooting, redes e telecomunicações, automação, infraestrutura, eletrônica e sistemas embarcados. No dia a dia, isso inclui investigar falhas, analisar logs, entender comportamento de equipamentos de rede, automatizar tarefas em Python e transformar problemas vagos em hipóteses testáveis.
+<div class="hx:flex hx:flex-col hx:sm:flex-row hx:gap-6 hx:items-center hx:sm:items-start hx:my-6">
+  <img src="/images/profile.jpg" alt="Enzo Capellari" class="hx:w-28 hx:h-28 hx:rounded-full hx:border-2 hx:border-primary-500 hx:shadow-sm hx:shrink-0" />
+  <div class="hx:flex-1">
+    <p class="hx:mt-0">Sou Enzo Capellari, estudante de Engenharia de Computação na PUCPR e profissional da área de telecomunicações na Lightera Brasil.</p>
+    <p>Trabalho e estudo temas ligados a desenvolvimento de software, troubleshooting, redes e telecomunicações, automação, infraestrutura, eletrônica e sistemas embarcados. No dia a dia, isso inclui investigar falhas, analisar logs, entender comportamento de equipamentos de rede, automatizar tarefas em Python e transformar problemas vagos em hipóteses testáveis.</p>
+  </div>
+</div>
 
 Este blog existe para registrar projetos, experimentos, decisões técnicas, dificuldades, soluções e a evolução do meu repertório ao longo da formação e da carreira. A ideia não é publicar apenas resultados prontos, mas também documentar o caminho: o que funcionou, o que quebrou, o que precisei revisar e o que aprendi no processo.
 

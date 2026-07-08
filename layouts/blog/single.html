@@ -72,24 +72,7 @@
           </div>
         {{ end }}
 
-        <!-- Author Card -->
-        <section class="about-author-card hx:mt-12 hx:p-6 hx:rounded-2xl hx:border hx:border-slate-200 hx:dark:border-slate-800 hx:bg-slate-50 hx:dark:bg-slate-900/50">
-          <div class="hx:flex hx:flex-col hx:sm:flex-row hx:gap-4 hx:items-center hx:sm:items-start">
-            <img src="https://github.com/zocacc.png" alt="Enzo Capellari" class="hx:w-20 hx:h-20 hx:rounded-full hx:border-2 hx:border-primary-500 hx:shadow-sm" />
-            <div class="hx:flex-1 hx:text-center hx:sm:text-left">
-              <span class="author-label hx:text-xs hx:font-bold hx:tracking-wider hx:uppercase hx:text-primary-600 hx:dark:text-primary-400">Sobre o Autor</span>
-              <h3 class="hx:text-lg hx:font-bold hx:text-slate-900 hx:dark:text-slate-100 hx:mt-1">Enzo Capellari</h3>
-              <p class="hx:text-sm hx:text-slate-600 hx:dark:text-slate-400 hx:mt-2">
-                Estudante de Engenharia de Computação na PUCPR, focado em desenvolvimento de software, telecomunicações e IoT. Atua no desenvolvimento de automações e ferramentas para resolução de problemas reais de rede.
-              </p>
-              <div class="author-social-links hx:flex hx:justify-center hx:sm:justify-start hx:gap-3 hx:mt-3">
-                <a href="https://github.com/zocacc" target="_blank" rel="noopener noreferrer" class="hx:text-xs hx:text-slate-500 hx:hover:text-primary-600 hx:dark:hover:text-primary-400">GitHub</a>
-                <span class="hx:text-slate-300 hx:dark:text-slate-700">•</span>
-                <a href="https://x.com/zocacc" target="_blank" rel="noopener noreferrer" class="hx:text-xs hx:text-slate-500 hx:hover:text-primary-600 hx:dark:hover:text-primary-400">X/Twitter</a>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         {{- partial "components/last-updated.html" . -}}
         {{- if (site.Params.blog.article.displayPagination | default true) -}}
