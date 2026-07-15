@@ -12,8 +12,8 @@
           <p class="hero-lead">{{ T "heroLead" }}</p>
           <p class="hero-copy">{{ T "heroCopy" }}</p>
           <div class="hero-actions">
-            <a class="primary-link" href="{{ "/blog/" | relURL }}">{{ T "readBlog" }}</a>
-            <a class="secondary-link" href="{{ "/projetos/" | relURL }}">{{ T "viewProjects" }}</a>
+            <a class="primary-link" href="{{ "/blog/" | relLangURL }}">{{ T "readBlog" }}</a>
+            <a class="secondary-link" href="{{ "/projetos/" | relLangURL }}">{{ T "viewProjects" }}</a>
             <a class="secondary-link" href="https://github.com/zocacc" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </section>
@@ -25,7 +25,7 @@
               <p class="section-label">{{ T "recentArticles" }}</p>
               <h2 id="recent-title">{{ T "subRecentArticles" }}</h2>
             </div>
-            <a class="section-link" href="{{ "/blog/" | relURL }}">{{ T "allArticles" }}</a>
+            <a class="section-link" href="{{ "/blog/" | relLangURL }}">{{ T "allArticles" }}</a>
           </div>
           {{ if gt (len $recentPosts) 0 }}
             <div class="blog-featured-layout">
@@ -115,7 +115,7 @@
               <p class="section-label">{{ T "featuredProjects" }}</p>
               <h2 id="projects-title">{{ T "subFeaturedProjects" }}</h2>
             </div>
-            <a class="section-link" href="{{ "/projetos/" | relURL }}">{{ T "allProjects" }}</a>
+            <a class="section-link" href="{{ "/projetos/" | relLangURL }}">{{ T "allProjects" }}</a>
           </div>
           {{ if gt (len $featuredProjects) 0 }}
             <div class="project-grid">
