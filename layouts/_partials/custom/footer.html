@@ -1,9 +1,9 @@
 {{- $page := .context -}}
 <div class="site-footer-inner">
   <p>&copy; {{ now.Year }} Enzo Capellari</p>
-  <nav aria-label="Links do rodapé">
+  <nav aria-label="{{ T "footerLinksAriaLabel" }}">
     <a href="https://github.com/zocacc" target="_blank" rel="noopener noreferrer">GitHub</a>
     <a href="https://x.com/zocacc" target="_blank" rel="noopener noreferrer">X/Twitter</a>
-    <span>Feito com <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> e <a href="https://github.com/imfing/hextra" target="_blank" rel="noopener noreferrer">Hextra</a></span>
+    <span>{{ T "footerMadeWith" }} <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> {{ T "footerAnd" }} <a href="https://github.com/imfing/hextra" target="_blank" rel="noopener noreferrer">Hextra</a></span>
   </nav>
 </div>

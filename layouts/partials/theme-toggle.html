@@ -1,9 +1,13 @@
 <button
   class="capellari-theme-toggle"
   type="button"
-  aria-label="Alternar para modo escuro"
-  title="Alternar para modo escuro"
+  aria-label="{{ T "themeToggleToDark" }}"
+  title="{{ T "themeToggleToDark" }}"
   data-theme-toggle
+  data-label-light="{{ T "themeLabelLight" }}"
+  data-label-dark="{{ T "themeLabelDark" }}"
+  data-title-light="{{ T "themeToggleToLight" }}"
+  data-title-dark="{{ T "themeToggleToDark" }}"
 >
   <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true">
     {{- partial "utils/icon.html" (dict "name" "sun" "attributes" "height=18 width=18") -}}
@@ -11,7 +15,7 @@
   <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true">
     {{- partial "utils/icon.html" (dict "name" "moon" "attributes" "height=18 width=18") -}}
   </span>
-  <span class="theme-toggle-label" data-theme-label>Escuro</span>
+  <span class="theme-toggle-label" data-theme-label>{{ T "themeLabelDark" }}</span>
 </button>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -24,10 +28,15 @@
 
       themeToggles.forEach(function (themeToggle) {
         const themeLabel = themeToggle.querySelector("[data-theme-label]");
+        const labelLight = themeToggle.dataset.labelLight;
+        const labelDark = themeToggle.dataset.labelDark;
+        const titleLight = themeToggle.dataset.titleLight;
+        const titleDark = themeToggle.dataset.titleDark;
+
         themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
-        themeToggle.setAttribute("title", isDark ? "Alternar para modo claro" : "Alternar para modo escuro");
-        themeToggle.setAttribute("aria-label", isDark ? "Alternar para modo claro" : "Alternar para modo escuro");
-        if (themeLabel) themeLabel.textContent = isDark ? "Claro" : "Escuro";
+        themeToggle.setAttribute("title", isDark ? titleLight : titleDark);
+        themeToggle.setAttribute("aria-label", isDark ? titleLight : titleDark);
+        if (themeLabel) themeLabel.textContent = isDark ? labelLight : labelDark;
       });
     }
 

@@ -75,3 +75,32 @@ emptyProjects:
   other: "Os projetos ainda estão sendo documentados. A seção já contempla status, tecnologias, links para GitHub, artigo relacionado e principais aprendizados."
 emptyProjectsList:
   other: "Os projetos públicos ainda estão sendo organizados. A estrutura da seção já está pronta para receber descrições, status, tecnologias, links e aprendizados."
+
+# Footer
+footerLinksAriaLabel:
+  other: "Links do rodapé"
+footerMadeWith:
+  other: "Feito com"
+footerAnd:
+  other: "e"
+
+# 404 Page
+errorKicker:
+  other: "Erro 404"
+pageNotFound:
+  other: "Página não encontrada"
+pageNotFoundDescription:
+  other: "O caminho que você tentou acessar não existe ou foi movido. Use a navegação principal ou volte para a página inicial."
+goToHome:
+  other: "Ir para a página inicial"
+
+# Theme Toggle
+themeToggleToLight:
+  other: "Alternar para modo claro"
+themeToggleToDark:
+  other: "Alternar para modo escuro"
+themeLabelLight:
+  other: "Claro"
+themeLabelDark:
+  other: "Escuro"
+

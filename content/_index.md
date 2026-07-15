@@ -1,6 +1,6 @@
 ---
 title: Capellari Dev
-description: Engenharia, software, redes e projetos construídos enquanto aprendo.
+description: Engineering, software, networks, and projects built as I learn.
 layout: home
 toc: false
 ---

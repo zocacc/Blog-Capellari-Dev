@@ -75,3 +75,32 @@ emptyProjects:
   other: "Projects are still being documented. The section already includes status, technologies, GitHub links, related article, and key takeaways."
 emptyProjectsList:
   other: "Public projects are still being organized. The section structure is ready to receive descriptions, status, technologies, links, and takeaways."
+
+# Footer
+footerLinksAriaLabel:
+  other: "Footer links"
+footerMadeWith:
+  other: "Made with"
+footerAnd:
+  other: "and"
+
+# 404 Page
+errorKicker:
+  other: "Error 404"
+pageNotFound:
+  other: "Page not found"
+pageNotFoundDescription:
+  other: "The path you tried to access does not exist or has been moved. Use the main navigation or return to the home page."
+goToHome:
+  other: "Go to homepage"
+
+# Theme Toggle
+themeToggleToLight:
+  other: "Switch to light mode"
+themeToggleToDark:
+  other: "Switch to dark mode"
+themeLabelLight:
+  other: "Light"
+themeLabelDark:
+  other: "Dark"
+
